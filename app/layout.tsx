@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { ThemeProvider } from "@/components/ui/theme-provider";
-import Navbar from "@/components/Navbar";
+import DNavbar from "@/components/DNavbar";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
@@ -24,7 +24,6 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <main className="">
-            <Navbar />
             <div className=" relative">{children}</div>
           </main>
           <Footer />

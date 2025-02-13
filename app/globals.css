@@ -1,4 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Lalezar&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Figtree:ital@0;1&family=Manrope:wght@200..800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Figtree:ital@0;1&family=Manrope:wght@200..800&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -15,7 +17,6 @@
 * {
   margin: 0;
   padding: 0;
-  font: var(--ff-poppins);
 }
 
 /* Remove list styles on ul, ol elements with a list role */
@@ -38,7 +39,7 @@ body {
 body {
   text-rendering: optimizeSpeed;
   line-height: 1.5;
-  font-family: var(--ff-poppins);
+  font-family: "Inter", sans-serif;
 }
 
 /* Styling for links without a class */
@@ -83,15 +84,15 @@ svg {
 
 @layer base {
   :root {
-    --background: 45 35% 91%;
+    --background: 0 0% 100%;
     --foreground: 240 10% 3.9%;
     --card: 256 0% 96%;
     --card-foreground: 240 10% 3.9%;
     --popover: 0 0% 100%;
     --popover-foreground: 240 10% 3.9%;
-    --primary: 8 99% 67%;
+    --primary: 302 0% 7%; /* #121212 */
     --primary-foreground: 0 0% 98%;
-    --secondary: 256 0% 0%;
+    --secondary: 302 0% 26%; /* #434343 */
     --secondary-foreground: 240 5.9% 10%;
     --muted: 240 4.8% 95.9%;
     --muted-foreground: 240 3.8% 46.1%;
@@ -106,15 +107,15 @@ svg {
   }
 
   .dark {
-    --background: 256 0% 14%;
+    --background: 0 0% 7%;
     --foreground: 0 0% 98%;
     --card: 28 0% 12%;
     --card-foreground: 0 0% 98%;
     --popover: 240 10% 3.9%;
     --popover-foreground: 0 0% 98%;
-    --primary: 9 99% 67%;
+    --primary: 302 0% 78%; /* #C8C8C8 */
     --primary-foreground: 240 5.9% 10%;
-    --secondary: 26 78% 98%;
+    --secondary: 302 0% 64%; /* #A4A4A4 */
     --secondary-foreground: 0 0% 98%;
     --muted: 0, 0%, 14%;
     --muted-foreground: 240 5% 64.9%;
@@ -141,6 +142,8 @@ svg {
 :root {
   --ff-poppins: "Poppins", sans-serif;
   --ff-lalezar: "Lalezar", system-ui;
+  --ff-manrope: "Manrope", sans-serif;
+  --ff-be-vietnam-pro: "Be Vietnam Pro", sans-serif;
 
   --fw-thin: 100;
   --fw-extralight: 200;
@@ -152,13 +155,22 @@ svg {
   --fw-extra-bold: 800;
   --fw-black: 900;
 
-  --fs-300: 0.8125rem;
-  --fs-400: 0.875rem;
-  --fs-500: 0.9375rem;
-  --fs-600: 1rem;
-  --fs-700: 1.875rem;
-  --fs-800: 2.5rem;
-  --fs-900: 3.5rem;
+  --fs-sm: 0.75rem; /* 12px */
+  --fs-md: 0.875rem; /* 14px */
+  --fs-lg: 1rem; /* 16px */
+  --fs-xl: 1.125rem; /* 18px */
+  --fs-2xl: 1.25rem; /* 20px */
+  --fs-3xl: 1.5rem; /* 24px */
+  --fs-4xl: 1.75rem; /* 28px */
+  --fs-5xl: 2rem; /* 32px */
+  --fs-6xl: 2.5rem; /* 40px */
+  --fs-7xl: 3rem; /* 48px */
+  --fs-8xl: 3.5rem; /* 56px */
+  --fs-9xl: 4rem; /* 64px */
+  --fs-10xl: 4.5rem; /* 72px */
+  --fs-11xl: 5rem; /* 80px */
+  --fs-12xl: 5.5rem; /* 88px */
+  --fs-13xl: 6.25rem; /* 100px */
 }
 
 /*Variable initiation*/
@@ -168,6 +180,13 @@ svg {
 }
 .ff-secondary {
   font-family: var(--ff-lalezar);
+}
+
+.ff-tertiary {
+  font-family: "Manrope", sans-serif;
+}
+.ff-be-vietnam-pro {
+  font-family: "Be Vietnam Pro", sans-serif;
 }
 
 /*Font Weight*/
@@ -195,30 +214,10 @@ svg {
 .fw-extra-bold {
   font-weight: var(--fw-extra-bold);
 }
-
-/* Font sizes for general text */
-.fs-300 {
-  font-size: var(--fs-300);
-}
-.fs-400 {
-  font-size: var(--fs-400);
-}
-.fs-500 {
-  font-size: var(--fs-500);
-}
-.fs-600 {
-  font-size: var(--fs-600);
-}
-.fs-700 {
-  font-size: var(--fs-700);
-}
-.fs-800 {
-  font-size: var(--fs-800);
-}
-.fs-900 {
-  font-size: var(--fs-900);
+.fw-black {
+  font-weight: var(--fw-black);
 }
 
 .container {
-  @apply px-10 md:px-20 lg:px-40 xl:px-56;
+  @apply px-5 sm:px-9 mx-auto;
 }

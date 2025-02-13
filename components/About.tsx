@@ -9,7 +9,7 @@ import { motion } from "framer-motion";
 const About = () => {
   return (
     <>
-      <section className="container">
+      <section className="container justify-center">
         <div className="flex justify-center ">
           <h1 className="text-xl font-semibold">About Me</h1>
         </div>
@@ -136,7 +136,7 @@ const About = () => {
                   <h3 className="fs-500 fw-semi-bold border-b text-primary">
                     Tools
                   </h3>
-                  <div className="flex gap-4 mt-3 justify-center sm:justify-start">
+                  <div className="flex gap-4 mt-3 justify-center lg:justify-start">
                     <Image
                       src={"/vscode.svg"}
                       alt="vscode"

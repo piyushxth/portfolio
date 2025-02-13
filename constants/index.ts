@@ -9,9 +9,9 @@ import {
 } from "lucide-react";
 
 export const Navlinks = [
-  { name: "Home", href: "/", key: "Home" },
-  { name: "My Projects", href: "/My-Projects", key: "My-Projects" },
-  { name: "About", href: "/About", key: "About" },
+  { name: "Docs", href: "/", key: "Home" },
+  { name: "Blogs", href: "/My-Projects", key: "My-Projects" },
+  { name: "Showcase", href: "/About", key: "About" },
   { name: "Contact", href: "/Contact", key: "Contact" },
 ];
 

@@ -28,7 +28,7 @@ export function ModeToggle() {
       <Button
         variant="outline"
         size="icon"
-        className="h-7 w-7 md:h-8 md:w-8 bg-primary/90"
+        className="h-9 w-9 md:h-8 md:w-8 bg-red/50"
         onClick={toggleTheme}
       >
         <SunIcon className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
