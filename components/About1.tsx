@@ -52,10 +52,12 @@ const About1 = () => {
           <CardContainer className="inter-var">
             <CardBody className=" relative group/card  w-auto sm:w-[30rem] h-[500px] rounded-xl bg-black/20">
               <CardItem className="text-xl font-bold text-neutral-600 dark:text-white">
-                <img
+                <Image
+                  width={1000}
+                  height={1000}
                   src="/hero-images/hero3.jpg"
                   alt="hero"
-                  className="md:flex h-[500px] w-full rounded-2xl"
+                  className="h-[500px] w-auto object-cover md:flex  rounded-2xl"
                 />
               </CardItem>
             </CardBody>
@@ -83,9 +85,9 @@ const About1 = () => {
 
           <div className="py-10 text-fs-2xl text-primary max-w-2xl">
             <p>
-              I'm an experienced front-end developer with a passion for design
-              and a knack for tinkering. Web development is my playground, where
-              I push boundaries and chase new horizons. 🤤
+              I&apos;m an experienced front-end developer with a passion for
+              design and a knack for tinkering. Web development is my
+              playground, where I push boundaries and chase new horizons. 🤤
             </p>
           </div>
         </div>
