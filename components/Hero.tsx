@@ -32,7 +32,7 @@ const Hero = () => {
         duration: 0.8,
         ease: "easeInOut",
       }}
-      className="flex flex-col items-center gap-10 h-screen"
+      className="flex flex-col items-center gap-10 h-screen py-20"
     >
       {" "}
       <div className="flex flex-col text-center text-fs-5xl sm:text-fs-7xl xl:text-fs-8xl fw-extra-bold leading-none px-4 pt-10 sm:pt-16 ff-tertiary text-secondary dark:text-white">

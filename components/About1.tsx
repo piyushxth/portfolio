@@ -4,95 +4,71 @@ import React from "react";
 import { motion } from "framer-motion";
 import { WobbleCard } from "./ui/wobble-card";
 import { CardBody, CardContainer, CardItem } from "./ui/3d-card";
+import { ShootingStars } from "@/components/ui/shooting-stars";
+import { StarsBackground } from "@/components/ui/stars-background";
+
 const About1 = () => {
   return (
-    <motion.section
-      initial={{ opacity: 0.0, y: 40 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{
-        delay: 0.3,
-        duration: 0.8,
-        ease: "easeInOut",
-      }}
-      className="container flex flex-col  h-auto items-center py-32 lg:py-[20rem]"
-    >
-      {/* <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 max-w-7xl mx-auto w-full">
-        <WobbleCard
-          containerClassName="col-span-1 lg:col-span-2 h-full bg-pink-800 min-h-[500px] lg:min-h-[300px]"
-          className=""
-        >
-          <div className="max-w-xs">
-            <h2 className="text-left text-balance text-base md:text-xl lg:text-3xl font-semibold tracking-[-0.015em] text-white">
-              Gippity AI powers the entire universe
-            </h2>
-            <p className="mt-4 text-left  text-base/6 text-neutral-200">
-              With over 100,000 mothly active bot users, Gippity AI is the most
-              popular AI platform for developers.
-            </p>
-          </div>
-          <Image
-            src="/linear.webp"
-            width={500}
-            height={500}
-            alt="linear demo image"
-            className="absolute -right-4 lg:-right-[40%] grayscale filter -bottom-10 object-contain rounded-2xl"
-          />
-        </WobbleCard>
-        <WobbleCard containerClassName="col-span-1 min-h-[300px]">
-          <h2 className="max-w-80  text-left text-balance text-base md:text-xl lg:text-3xl font-semibold tracking-[-0.015em] text-white">
-            No shirt, no shoes, no weapons.
-          </h2>
-          <p className="mt-4 max-w-[26rem] text-left  text-base/6 text-neutral-200">
-            If someone yells “stop!”, goes limp, or taps out, the fight is over.
+    <>
+      <motion.section
+        initial={{ opacity: 0.0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{
+          delay: 0.3,
+          duration: 0.8,
+          ease: "easeInOut",
+        }}
+        className="container flex flex-col xl:flex-row justify-between pb-20 relative my-10 md:my-40"
+      >
+        <div className=" text-fs-2xl space-y-5">
+          <h1 className="font-semibold text-[64px]">About Me</h1>
+          <p className="text-[#11111180] dark:text-[#DCDCEE]  text-[24px]">
+            Hello, I&apos;m a designer and developer from The Netherlands.
+            I&apos;ve previously founded Flitsmeister, a navigation app for iOS
+            and Android which has become one of the most well-known brands in
+            The Netherlands. Starting from scratch, we successfully grew our
+            userbase from 0 to 3 million users. In the initial stages, my focus
+            was on designing and developing the iOS app, but as we evolved, I
+            shifted towards leading the design team and doing some React.js
+            development. Flitsmeister was acquired in 2019.
           </p>
-        </WobbleCard>
-      </div> */}
-      <div className="grid grid-cols-2 border">
-        <div className="border">
-          <CardContainer className="inter-var">
-            <CardBody className=" relative group/card  w-auto sm:w-[30rem] h-[500px] rounded-xl bg-black/20">
-              <CardItem className="text-xl font-bold text-neutral-600 dark:text-white">
-                <Image
-                  width={1000}
-                  height={1000}
-                  src="/hero-images/hero3.jpg"
-                  alt="hero"
-                  className="h-[500px] w-auto object-cover md:flex  rounded-2xl"
-                />
-              </CardItem>
-            </CardBody>
-          </CardContainer>
+          <p className="text-[#11111180] dark:text-[#DCDCEE]  text-[24px]">
+            Over the years I&apos;ve developed all kinds of apps in all kinds of
+            languages. From C++ to C#, Java, Objective-C, Swift, Javascript and
+            many others. I&apos;ve done a lot of motion and 3D design too. I
+            love working on side projects. Over the years, I&apos;ve launched a
+            lot of them, some of which are showcased here, others are at the
+            graveyard. I&apos;m working on 2 apps for web developers which will
+            be launched early 2024.
+          </p>
+          <p className="text-[#11111180] dark:text-[#DCDCEE]  text-[24px]">
+            I&apos;m currently helping startups and business with the design and
+            development of their apps and websites. Sometimes I help agencies
+            too. If you want me to help you with your Website design, App design
+            (mobile or MacOS), React.js development, or Framer website, feel
+            free to send me an email or drop me a DM on Twitter/X.
+          </p>
         </div>
-        <div>
-          {/* <div className="flex items-center p-4 gap-1">
-            <div className="">
-              <Image
-                src="/hero-profile1.png"
-                alt="profile"
-                width={100}
-                height={100}
-                className="object-cover"
-                priority
-              />
-            </div>
-            <div className="leading-snug tracking-tighter">
-              <h3 className="text-fs-5xl fw-bold ">Piyush Shrestha</h3>
-              <h3 className="text-fs-lg fw-semi-bold text-[#8989BB] uppercase">
-                Web Developer
-              </h3>
-            </div>
-          </div> */}
 
-          <div className="py-10 text-fs-2xl text-primary max-w-2xl">
-            <p>
-              I&apos;m an experienced front-end developer with a passion for
-              design and a knack for tinkering. Web development is my
-              playground, where I push boundaries and chase new horizons. 🤤
-            </p>
+        <div className="hidden lg:block  mb-10">
+          <div className="sticky top-5 max-h-[500px] p-5 rounded-lg">
+            <CardContainer className="sticky top-0 inter-var  max-h-[400px]">
+              <CardBody className="  group/card  w-auto md:w-[30rem] rounded-xl flex justify-center">
+                <CardItem className=" text-xl font-bold text-neutral-600 dark:text-white">
+                  <Image
+                    width={1000}
+                    height={1000}
+                    src="/hero-images/hero3.jpg"
+                    alt="hero"
+                    className="max-h-[400px] w-[20rem] md:w-auto object-cover md:flex  rounded-2xl"
+                  />
+                </CardItem>
+              </CardBody>
+            </CardContainer>
           </div>
         </div>
-      </div>
-    </motion.section>
+      </motion.section>
+    </>
   );
 };
 
