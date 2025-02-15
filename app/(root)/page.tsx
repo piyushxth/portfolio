@@ -9,6 +9,7 @@ import { ShootingStars } from "@/components/ui/shooting-stars";
 import { StarsBackground } from "@/components/ui/stars-background";
 import SkillsScroll from "@/components/SkillsScroll";
 import Projects from "@/components/Projects";
+import Experience from "@/components/Experience";
 
 export default function Home() {
   return (
@@ -25,9 +26,10 @@ export default function Home() {
       <About1 />
       <SkillsScroll />
       <Projects />
+      <Experience />
       {/* <ShootingStars />
       <StarsBackground /> */}
-      {/* <About /> */}
+      <About />
       {/* <Services /> */}
       {/* <Partner /> */}
     </>

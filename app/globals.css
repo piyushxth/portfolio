@@ -304,3 +304,32 @@ svg {
   max-width: 100px;
   scale: 0.8;
 }
+
+.exp-img::before {
+  content: "";
+  background-color: #27272b66;
+  width: 1px;
+  height: calc(100% - 80px);
+  top: 5rem;
+  left: 2.25rem;
+  position: absolute;
+}
+/* <div
+  className="w-[11px] h-[11px] rounded-full bg-primary absolute -left-[5px] group-hover:translate-y-[84px] transition-all duration-500"
+  > </div
+  > */
+
+.exp-img::after {
+  content: "";
+  background: rgb(207, 45, 45);
+  position: absolute;
+  top: 5rem;
+  left: 2rem;
+  transition: all 0.3s ease-in-out;
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+}
+.group:hover .exp-img::after {
+  transform: translateY(100px);
+}
