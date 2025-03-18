@@ -23,24 +23,7 @@ const config = {
       lg: "1024px",
       xl: "1280px",
     },
-    fontSize: {
-      "fs-sm": "0.75rem", // 12px
-      "fs-md": "0.875rem", // 14px
-      "fs-lg": "1rem", // 16px
-      "fs-xl": "1.125rem", // 18px
-      "fs-2xl": "1.25rem", // 20px
-      "fs-3xl": "1.5rem", // 24px
-      "fs-4xl": "1.75rem", // 28px
-      "fs-5xl": "2rem", // 32px
-      "fs-6xl": "2.5rem", // 40px
-      "fs-7xl": "3rem", // 48px
-      "fs-8xl": "3.5rem", // 56px
-      "fs-9xl": "4rem", // 64px
-      "fs-10xl": "4.5rem", // 72px
-      "fs-11xl": "5rem", // 80px
-      "fs-12xl": "5.5rem", // 88px
-      "fs-13xl": "6.25rem", // 100px
-    },
+
     container: {
       center: true,
       padding: "2rem",
@@ -49,8 +32,25 @@ const config = {
       },
     },
     extend: {
+      fontSize: {
+        "fs-sm": "0.75rem",
+        "fs-md": "0.875rem",
+        "fs-lg": "1rem",
+        "fs-xl": "1.125rem",
+        "fs-2xl": "1.25rem",
+        "fs-3xl": "1.5rem",
+        "fs-4xl": "1.75rem",
+        "fs-5xl": "2rem",
+        "fs-6xl": "2.5rem",
+        "fs-7xl": "3rem",
+        "fs-8xl": "3.5rem",
+        "fs-9xl": "4rem",
+        "fs-10xl": "4.5rem",
+        "fs-11xl": "5rem",
+        "fs-12xl": "5.5rem",
+        "fs-13xl": "6.25rem",
+      },
       colors: {
-        // Default colors already in config
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
@@ -84,13 +84,21 @@ const config = {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-
-        // Custom colors
         green: "hsl(118, 60%, 63%)",
         yellow: "hsl(47, 99%, 55%)",
         blue: "hsl(178, 85%, 59%)",
         red: "hsl(355, 89%, 61%)",
         purple: "hsl(302, 67%, 54%)",
+        sidebar: {
+          DEFAULT: "hsl(var(--sidebar-background))",
+          foreground: "hsl(var(--sidebar-foreground))",
+          primary: "hsl(var(--sidebar-primary))",
+          "primary-foreground": "hsl(var(--sidebar-primary-foreground))",
+          accent: "hsl(var(--sidebar-accent))",
+          "accent-foreground": "hsl(var(--sidebar-accent-foreground))",
+          border: "hsl(var(--sidebar-border))",
+          ring: "hsl(var(--sidebar-ring))",
+        },
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -99,12 +107,20 @@ const config = {
       },
       keyframes: {
         "accordion-down": {
-          from: { height: "0" },
-          to: { height: "var(--radix-accordion-content-height)" },
+          from: {
+            height: "0",
+          },
+          to: {
+            height: "var(--radix-accordion-content-height)",
+          },
         },
         "accordion-up": {
-          from: { height: "var(--radix-accordion-content-height)" },
-          to: { height: "0" },
+          from: {
+            height: "var(--radix-accordion-content-height)",
+          },
+          to: {
+            height: "0",
+          },
         },
         spotlight: {
           "0%": {

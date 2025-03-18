@@ -1,3 +1,4 @@
+import Image from "next/image";
 import React from "react";
 
 const Experience = () => {
@@ -53,29 +54,36 @@ const Experience = () => {
   ];
 
   return (
-    <div className="container my-32">
-      <h1 className="text-[52px] font-bold mb-10">Work Experience </h1>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-y-32 gap-x-12">
+    <div className="container my-32 ff-primary">
+      <div className="mb-20 space-y-4 text-center text-primary">
+        <h1>Work Experience</h1>
+        <h5 className="tracking-wider text-fs-xl">
+          A collection of things I&apos;ve built.
+        </h5>
+      </div>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-y-20 md:gap-y-32 gap-x-12">
         {experiences.map((exp, index) => (
           <div key={index} className="flex gap-6 relative max-w-2xl group">
-            <div className="min-h-[80px] min-w-[80px] h-[80px] w-[80px] exp-img p-2 bg-[#27272B66] border border-[#262629] rounded-lg place-items-center">
-              <img
+            <div className="min-h-[80px] min-w-[80px] h-[80px] w-[80px] exp-img p-2 bg-red dark:bg-[#27272B66] border dark:border-[#262629] rounded-lg place-items-center">
+              <Image
+                width={100}
+                height={100}
                 src={exp.image}
                 alt={exp.company}
                 className="w-[50px] h-[50px]"
               />
             </div>
             <div>
-              <h3 className="text-fs-xl text-white font-semibold leading-[1.75rem]">
+              <h3 className="text-fs-3xl md:text-3xl text-[#2b2a2a] dark:text-[#DCDCEE] font-semibold">
                 {exp.company}
               </h3>
-              <h3 className="text-fs-xl text-white font-semibold leading-[1.75rem]">
+              <h4 className=" text-[#2b2a2a] dark:text-[#DCDCEE] font-semibold py-2">
                 {exp.role}
-              </h3>
-              <time className="text-fs-md text-[#71717A] uppercase tracking-[.1em]">
+              </h4>
+              <time className="text-md text-[#424242]  dark:text-[#71717A] uppercase tracking-[.1em] ">
                 {exp.date}
               </time>
-              <p className="my-4 font-semibold text-[#A1A1AA]">
+              <p className="my-4 text-[#494848] tracking-wide text-lg md:text-xl dark:text-[#A1A1AA]">
                 {exp.description}
               </p>
             </div>

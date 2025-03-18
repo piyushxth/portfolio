@@ -1,11 +1,18 @@
+import Image from "next/image";
 import React from "react";
 
 const SkillsScroll = () => {
   return (
     <>
+      <div className="mb-10 space-y-4 text-center text-primary">
+        <h1>My Skills</h1>
+        <h5 className="tracking-wider text-fs-xl">
+          Some skills I&apos;ve achieved.
+        </h5>
+      </div>
       <div
-        className="container scroll-left"
-        style={{ "--time": "20s" } as React.CSSProperties}
+        className="scroll"
+        style={{ "--time": "15s" } as React.CSSProperties}
       >
         <div>
           <span>HTML</span>
@@ -34,7 +41,7 @@ const SkillsScroll = () => {
       </div>
 
       <div
-        className="container scroll-left"
+        className="scroll"
         style={{ "--time": "30s" } as React.CSSProperties}
       >
         <div>
@@ -64,30 +71,154 @@ const SkillsScroll = () => {
       </div>
 
       <div
-        className="container scroll-left imgBox"
-        style={{ "--time": "20s" } as React.CSSProperties}
+        className="scroll imgBox"
+        style={{ "--time": "25s" } as React.CSSProperties}
       >
         <div>
-          <img src="./skills-icons/css.png" alt="" />
-          <img src="./skills-icons/js.png" alt="" />
-          <img src="./skills-icons/React.png" alt="" />
-          <img src="./skills-icons/angular.png" alt="" />
-          <img src="./skills-icons/figma.png" alt="" />
-          <img src="./skills-icons/photoshop.png" alt="" />
-          <img src="./skills-icons/mui.png" alt="" />
-          <img src="./skills-icons/tailwind.png" alt="" />
-          <img src="./skills-icons/premierePro.png" alt="" />
+          <Image
+            height={100}
+            width={100}
+            className="h-[80px] w-auto"
+            src="/skills-icons/css.png"
+            alt=""
+          />
+          <Image
+            height={100}
+            width={100}
+            className="h-[80px] w-auto"
+            src="/skills-icons/css.png"
+            alt=""
+          />
+
+          <Image
+            height={100}
+            width={100}
+            className="h-[80px] w-auto"
+            src="/skills-icons/js.png"
+            alt=""
+          />
+          <Image
+            height={100}
+            width={100}
+            className="h-[80px] w-auto"
+            src="/skills-icons/React.png"
+            alt=""
+          />
+          <Image
+            height={100}
+            width={100}
+            className="h-[80px] w-auto"
+            src="/skills-icons/angular.png"
+            alt=""
+          />
+          <Image
+            height={100}
+            width={100}
+            className="h-[80px] w-auto"
+            src="/skills-icons/figma.png"
+            alt=""
+          />
+          <Image
+            height={100}
+            width={100}
+            className="h-[80px] w-auto"
+            src="/skills-icons/photoshop.png"
+            alt=""
+          />
+          <Image
+            height={100}
+            width={100}
+            className="h-[80px] w-auto"
+            src="/skills-icons/mui.png"
+            alt=""
+          />
+          <Image
+            height={100}
+            width={100}
+            className="h-[80px] w-auto"
+            src="/skills-icons/tailwind.png"
+            alt=""
+          />
+          <Image
+            height={100}
+            width={100}
+            className="h-[80px] w-auto"
+            src="/skills-icons/premierePro.png"
+            alt=""
+          />
         </div>
         <div>
-          <img src="./skills-icons/css.png" alt="" />
-          <img src="./skills-icons/js.png" alt="" />
-          <img src="./skills-icons/React.png" alt="" />
-          <img src="./skills-icons/angular.png" alt="" />
-          <img src="./skills-icons/figma.png" alt="" />
-          <img src="./skills-icons/photoshop.png" alt="" />
-          <img src="./skills-icons/mui.png" alt="" />
-          <img src="./skills-icons/tailwind.png" alt="" />
-          <img src="./skills-icons/premierePro.png" alt="" />
+          <Image
+            height={100}
+            width={100}
+            className="h-[80px] w-auto"
+            src="/skills-icons/css.png"
+            alt=""
+          />
+          <Image
+            height={100}
+            width={100}
+            className="h-[80px] w-auto"
+            src="/skills-icons/css.png"
+            alt=""
+          />
+
+          <Image
+            height={100}
+            width={100}
+            className="h-[80px] w-auto"
+            src="/skills-icons/js.png"
+            alt=""
+          />
+          <Image
+            height={100}
+            width={100}
+            className="h-[80px] w-auto"
+            src="/skills-icons/React.png"
+            alt=""
+          />
+          <Image
+            height={100}
+            width={100}
+            className="h-[80px] w-auto"
+            src="/skills-icons/angular.png"
+            alt=""
+          />
+          <Image
+            height={100}
+            width={100}
+            className="h-[80px] w-auto"
+            src="/skills-icons/figma.png"
+            alt=""
+          />
+          <Image
+            height={100}
+            width={100}
+            className="h-[80px] w-auto"
+            src="/skills-icons/photoshop.png"
+            alt=""
+          />
+          <Image
+            height={100}
+            width={100}
+            className="h-[80px] w-auto"
+            src="/skills-icons/mui.png"
+            alt=""
+          />
+          <Image
+            height={100}
+            width={100}
+            className="h-[80px] w-auto"
+            src="/skills-icons/tailwind.png"
+            alt=""
+          />
+          <Image
+            height={100}
+            width={100}
+            className="h-[80px] w-auto"
+            src="/skills-icons/premierePro.png"
+            alt=""
+          />
         </div>
       </div>
     </>

@@ -68,7 +68,7 @@ import MobileNav from "./ui/mobile-nav";
 const DNavbar = () => {
   const pathname = usePathname();
   return (
-    <nav className="w-11/12 fixed  top-0 z-50 left-1/2 -translate-x-1/2 50 flex h-14 items-center justify-between mt-5 rounded-full max-w-7xl  dark:bg-background/20 darK:backdrop-blur-[2px]">
+    <nav className="border w-11/12 fixed  top-0 z-50 left-1/2 -translate-x-1/2 50 flex h-14 items-center justify-between mt-5 rounded-full max-w-7xl  bg-background/20 backdrop-blur-lg ">
       <div className="flex items-center gap-2">
         <motion.div
           whileHover={{ scale: 1.2 }}

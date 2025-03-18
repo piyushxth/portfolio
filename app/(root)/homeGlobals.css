@@ -1,0 +1,416 @@
+@import url("https://fonts.googleapis.com/css2?family=Lalezar&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Figtree:ital@0;1&family=Manrope:wght@200..800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Figtree:ital@0;1&family=Manrope:wght@200..800&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin and padding */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role */
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+/* Set core body defaults */
+body {
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+  font-family: "Inter", sans-serif;
+  background-size: 200px 200px;
+  background-position: 0 0;
+}
+/* body {
+  @apply dark:bg-[url('/noise.51a05f55.png')];
+} */
+
+/* Styling for links without a class */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture,
+svg {
+  max-width: 100%;
+  display: block;
+}
+
+/* Styling for the scrollbar */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 12px;
+}
+
+/* Remove animations, transitions, and smooth scroll for reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
+    --card: 256 0% 96%;
+    --card-foreground: 240 10% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
+    --primary: 302 0% 7%; /* #121212 */
+    --primary-foreground: 0 0% 98%;
+    --secondary: 302 0% 26%; /* #434343 */
+    --secondary-foreground: 240 5.9% 10%;
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
+    --accent: 240 4.8% 95.9%;
+    --accent-foreground: 240 5.9% 10%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 256 90% 90%;
+    --input: 240 5.9% 90%;
+    --ring: 240 5.9% 10%;
+    --radius: 0.3rem;
+  }
+
+  .dark {
+    --background: 0 0% 7%;
+    --foreground: 0 0% 98%;
+    --card: 28 0% 12%;
+    --card-foreground: 0 0% 98%;
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 302 0% 78%; /* #C8C8C8 */
+    --primary-foreground: 240 5.9% 10%;
+    --secondary: 302 0% 64%; /* #A4A4A4 */
+    --secondary-foreground: 0 0% 98%;
+    --muted: 0, 0%, 14%;
+    --muted-foreground: 240 5% 64.9%;
+    --accent: 240 3.7% 15.9%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 256 0% 26%;
+    --input: 240 3.7% 15.9%;
+    --ring: 240 4.9% 83.9%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/*Root*/
+:root {
+  --ff-poppins: "Poppins", sans-serif;
+  --ff-lalezar: "Lalezar", system-ui;
+  --ff-manrope: "Manrope", sans-serif;
+  --ff-be-vietnam-pro: "Be Vietnam Pro", sans-serif;
+
+  --fw-thin: 100;
+  --fw-extralight: 200;
+  --fw-light: 300;
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-semi-bold: 600;
+  --fw-bold: 700;
+  --fw-extra-bold: 800;
+  --fw-black: 900;
+
+  --fs-sm: 0.75rem; /* 12px */
+  --fs-md: 0.875rem; /* 14px */
+  --fs-lg: 1rem; /* 16px */
+  --fs-xl: 1.125rem; /* 18px */
+  --fs-2xl: 1.25rem; /* 20px */
+  --fs-3xl: 1.5rem; /* 24px */
+  --fs-4xl: 1.75rem; /* 28px */
+  --fs-5xl: 2rem; /* 32px */
+  --fs-6xl: 2.5rem; /* 40px */
+  --fs-7xl: 3rem; /* 48px */
+  --fs-8xl: 3.5rem; /* 56px */
+  --fs-9xl: 4rem; /* 64px */
+  --fs-10xl: 4.5rem; /* 72px */
+  --fs-11xl: 5rem; /* 80px */
+  --fs-12xl: 5.5rem; /* 88px */
+  --fs-13xl: 6.25rem; /* 100px */
+}
+
+/* Heading 1 - Large titles, page headers */
+h1 {
+  @apply font-semibold text-[28px] sm:text-[36px] md:text-[48px] lg:text-[58px] 
+         leading-[2.5rem] sm:leading-[3rem] md:leading-[3.5rem] lg:leading-[4rem]
+         tracking-tight;
+}
+
+/* Heading 2 - Section headers */
+h2 {
+  @apply font-semibold text-[24px] sm:text-[30px] md:text-[36px] lg:text-[42px] 
+         leading-[2rem] sm:leading-[2.25rem] md:leading-[2.5rem] lg:leading-[3rem]
+         tracking-tight;
+}
+
+/* Heading 3 - Subsection headers */
+h3 {
+  @apply font-medium text-[20px] sm:text-[24px] md:text-[28px] lg:text-[32px] 
+         leading-[1.75rem] sm:leading-[2rem] md:leading-[2.25rem] lg:leading-[2.5rem];
+}
+
+/* Heading 4 - Card titles, smaller section headers */
+h4 {
+  @apply font-medium text-[18px] sm:text-[20px] md:text-[22px] lg:text-[24px] 
+         leading-[1.5rem] sm:leading-[1.75rem] md:leading-[1.875rem] lg:leading-[2rem];
+}
+
+/* Heading 5 - Small titles, widget headers */
+h5 {
+  @apply font-medium text-[16px] sm:text-[17px] md:text-[18px] lg:text-[20px] 
+         leading-[1.25rem] sm:leading-[1.375rem] md:leading-[1.5rem] lg:leading-[1.75rem];
+}
+
+/*Variable initiation*/
+/*Font Family*/
+.ff-primary {
+  font-family: var(--ff-poppins);
+}
+.ff-secondary {
+  font-family: var(--ff-lalezar);
+}
+
+.ff-tertiary {
+  font-family: "Manrope", sans-serif;
+}
+.ff-be-vietnam-pro {
+  font-family: "Be Vietnam Pro", sans-serif;
+}
+
+/*Font Weight*/
+.fw-thin {
+  font-weight: var(--fw-thin);
+}
+.fw-extralight {
+  font-weight: var(--fw-extralight);
+}
+.fw-light {
+  font-weight: var(--fw-light);
+}
+.fw-regular {
+  font-weight: var(--fw-regular);
+}
+.fw-medium {
+  font-weight: var(--fw-medium);
+}
+.fw-semi-bold {
+  font-weight: var(--fw-semi-bold);
+}
+.fw-bold {
+  font-weight: var(--fw-bold);
+}
+.fw-extra-bold {
+  font-weight: var(--fw-extra-bold);
+}
+.fw-black {
+  font-weight: var(--fw-black);
+}
+
+.container {
+  @apply px-5 sm:px-[80px] mx-auto;
+}
+
+.scroll {
+  position: relative;
+  display: flex;
+  max-width: 1200px;
+  overflow: hidden;
+  margin-inline: auto;
+  mask-image: linear-gradient(
+    90deg,
+    transparent,
+    #fff 20%,
+    #fff 80%,
+    transparent
+  );
+  -webkit-mask-image: linear-gradient(
+    90deg,
+    transparent,
+    #fff 20%,
+    #fff 80%,
+    transparent
+  );
+}
+
+.scroll div {
+  white-space: nowrap;
+  animation: scroll var(--time) linear infinite;
+  animation-delay: calc(var(--time) * -1);
+}
+
+.scroll div:nth-child(2) {
+  animation: scroll2 var(--time) linear infinite;
+  animation-delay: calc(var(--time) / -2);
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(100%);
+  }
+
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes scroll2 {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-200%);
+  }
+}
+
+.scroll div span {
+  display: inline-flex;
+  margin: 10px;
+  letter-spacing: 0.2em;
+  background: #333;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 5px;
+  transition: 0.5s;
+}
+
+.scroll div span:hover {
+  background: #3fd2f9;
+  cursor: pointer;
+}
+
+.imgBox div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  animation: scroll var(--time) linear infinite;
+  animation-delay: calc(var(--time) * -1);
+}
+
+.imgBox img {
+  max-width: 100px;
+  scale: 0.8;
+}
+
+/*Experice part*/
+.exp-img::before {
+  content: "";
+  background-color: #27272b66;
+  width: 1px;
+  height: calc(100% - 80px);
+  top: 5rem;
+  left: 2.25rem;
+  position: absolute;
+}
+/* <div
+  className="w-[11px] h-[11px] rounded-full bg-primary absolute -left-[5px] group-hover:translate-y-[84px] transition-all duration-500"
+  > </div
+  > */
+
+.exp-img::after {
+  content: "";
+  background: rgb(207, 45, 45);
+  position: absolute;
+  top: 5rem;
+  left: 2rem;
+  transition: all 0.3s ease-in-out;
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+}
+.group:hover .exp-img::after {
+  transform: translateY(168px);
+}
+
+/*Contact*/
+.contact {
+  @apply bg-gradient-to-r 
+ from-[rgba(215,230,148,0.8)] to-[rgba(201,102,102,0.7)] 
+ dark:from-[rgba(30,28,50,0.8)] dark:to-[rgba(43,22,29,0.7)];
+  -webkit-box-align: center;
+  -webkit-box-pack: center;
+}
+.contact h2 {
+  display: inline-block;
+  font-size: 48px;
+  line-height: 1.6;
+  letter-spacing: -1px;
+}
+.gradient {
+  background-size: 100%;
+  background-repeat: repeat;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.retro-2 {
+  background-color: #566cec;
+  background-image: linear-gradient(
+    90.42deg,
+    #4ab1f1 0.58%,
+    #566cec 37.22%,
+    #d749af 73.87%,
+    #ff7c51 112.26%
+  );
+}
+.chat {
+  transform: scale(1.2) translateY(18px);
+}
+
+.enquiry {
+  background-image: linear-gradient(73.19deg, #dc79ff 0%, #256bfa 95.06%);
+  color: white;
+}
+.enquiry:hover {
+  opacity: 0.8;
+}

@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
-import "./globals.css";
+import "./homeGlobals.css";
 import { ThemeProvider } from "@/components/ui/theme-provider";
 import DNavbar from "@/components/DNavbar";
 import Footer from "@/components/Footer";
+import TanstackProviders from "@/components/Providers";
 
 export const metadata: Metadata = {
   title: "Portfolio",
@@ -23,10 +24,12 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <main className="">
-            <div className=" relative">{children}</div>
-          </main>
-          <Footer />
+          <TanstackProviders>
+            <main className="">
+              <div className=" relative">{children}</div>
+            </main>
+            <Footer />
+          </TanstackProviders>
         </ThemeProvider>
       </body>
     </html>
