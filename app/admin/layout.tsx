@@ -1,10 +1,6 @@
 import type { Metadata } from "next";
 import "../admin/adminGlobals.css";
 import { ThemeProvider } from "@/components/ui/theme-provider";
-import DNavbar from "@/components/DNavbar";
-import Footer from "@/components/Footer";
-import { ModeToggle } from "@/components/ui/toggle-mode";
-
 import { DashboardSidebar } from "@/components/admin/dashboard/sidebar";
 import { SidebarProvider } from "@/components/admin/sidebar-provider";
 import { DashboardHeader } from "@/components/admin/dashboard/header";

@@ -15,6 +15,7 @@ const SkillsScroll = () => {
         style={{ "--time": "15s" } as React.CSSProperties}
       >
         <div>
+          <div className="flex flex-col gap-2">Hello World!!!</div>
           <span>HTML</span>
           <span>CSS</span>
           <span>JavaScript</span>
