@@ -9,10 +9,10 @@ import { Button } from "./ui/button";
 const About1 = () => {
   return (
     <>
-      <section className="container my-32 flex flex-col xl:flex-row justify-center pb-20 relative ff-primary">
+      <section className="container my-32 flex flex-col xl:flex-row justify-center pb-20 relative">
         <div className=" text-fs-2xl">
           <div className="space-y-7">
-            <h1 className="mb-10 md:mb-20 space-y-4 text-center text-primary">
+            <h1 className="mb-5 space-y-4 text-center text-primary">
               About Me
             </h1>
 
@@ -68,11 +68,11 @@ const About1 = () => {
                 </CardItem>
               </CardBody>
             </CardContainer>
-            <div className="flex justify-center gap-2 mt-5">
+            {/* <div className="flex justify-center gap-2 mt-5">
               <Button className="w-4/5 text-white  bg-red/90 hover:bg-red font-medium tracking-tight rounded-lg  py-6">
                 Get My Resume
               </Button>
-            </div>
+            </div> */}
           </div>
         </div>
       </section>

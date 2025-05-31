@@ -68,7 +68,8 @@ import MobileNav from "./ui/mobile-nav";
 const DNavbar = () => {
   const pathname = usePathname();
   return (
-    <nav className="border w-11/12 fixed  top-0 z-50 left-1/2 -translate-x-1/2 50 flex h-14 items-center justify-between mt-5 rounded-full max-w-7xl  bg-background/20 backdrop-blur-lg ">
+    <nav className=" container fixed  top-0 z-50 left-1/2 -translate-x-1/2 50 flex pr-2 h-12 items-center justify-between mt-2 rounded-full max-w-7xl backdrop-saturate-150 bg-white/[.90] dark:bg-background/[.65] backdrop-blur-lg ">
+      {/* <nav className="flex z-40 w-full h-12 items-center justify-between px-10 py-2 data-[menu-open=true]:border-none fixed top-0 inset-x-0 backdrop-blur-lg data-[menu-open=true]:backdrop-blur-xl backdrop-saturate-150 bg-white/[.90] dark:bg-background/[.65]"></nav> */}
       <div className="flex items-center gap-2">
         <motion.div
           whileHover={{ scale: 1.2 }}
@@ -93,7 +94,7 @@ const DNavbar = () => {
           <div key={link.key} className="hidden sm:flex relative">
             <Link
               href={link.href}
-              className={`font-semibold text-fs-lg text-lg hover:opacity-100 opacity-80 transition-colors
+              className={`font-semibold hover:opacity-100 opacity-80 transition-colors
               }`}
             >
               {link.name}

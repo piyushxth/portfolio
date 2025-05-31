@@ -41,7 +41,7 @@ export default function Home() {
       <SkillsScroll />
       <Experience />
       {/* Recent Posts */}
-      <section className="my-32 container ff-primary">
+      <section className="my-32 container">
         <div className="mb-20 space-y-4 text-center text-primary">
           <h1>Blog Posts</h1>
           <h5 className="tracking-wider text-fs-xl">

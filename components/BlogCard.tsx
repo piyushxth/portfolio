@@ -47,7 +47,7 @@ export default function BlogCard({ post, featured = false }: BlogCardProps) {
             </div>
           </div>
           <h3
-            className={`font-bold text-foreground group-hover:text-red transition-colors ${
+            className={`font-semibold text-foreground group-hover:text-red transition-colors ${
               featured ? "text-2xl md:text-3xl mb-3" : "text-xl mb-2"
             }`}
           >

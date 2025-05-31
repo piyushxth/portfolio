@@ -43,7 +43,7 @@ const Projects = () => {
   ];
   return (
     <>
-      <div className="container my-10 md:my-32 ff-primary">
+      <div className="container my-10 md:my-32">
         <div className="mb-10 md:mb-20 space-y-4 text-center text-primary">
           <h1>Featured Projects</h1>
           <h5>A collection of things I&apos;ve built.</h5>

@@ -39,7 +39,7 @@ body {
 body {
   text-rendering: optimizeSpeed;
   line-height: 1.5;
-  font-family: "Inter", sans-serif;
+  font-family: var(--ff-poppins);
   background-size: 200px 200px;
   background-position: 0 0;
 }
@@ -87,51 +87,49 @@ svg {
   }
 }
 
-@layer base {
-  :root {
-    --background: 0 0% 100%;
-    --foreground: 240 10% 3.9%;
-    --card: 256 0% 96%;
-    --card-foreground: 240 10% 3.9%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 240 10% 3.9%;
-    --primary: 302 0% 7%; /* #121212 */
-    --primary-foreground: 0 0% 98%;
-    --secondary: 302 0% 26%; /* #434343 */
-    --secondary-foreground: 240 5.9% 10%;
-    --muted: 240 4.8% 95.9%;
-    --muted-foreground: 240 3.8% 46.1%;
-    --accent: 240 4.8% 95.9%;
-    --accent-foreground: 240 5.9% 10%;
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 256 90% 90%;
-    --input: 240 5.9% 90%;
-    --ring: 240 5.9% 10%;
-    --radius: 0.3rem;
-  }
+:root {
+  --background: 0 0% 100%;
+  --foreground: 240 10% 3.9%;
+  --card: 256 0% 96%;
+  --card-foreground: 240 10% 3.9%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 240 10% 3.9%;
+  --primary: 302 0% 7%; /* #121212 */
+  --primary-foreground: 0 0% 98%;
+  --secondary: 302 0% 26%; /* #434343 */
+  --secondary-foreground: 240 5.9% 10%;
+  --muted: 240 4.8% 95.9%;
+  --muted-foreground: 240 3.8% 46.1%;
+  --accent: 240 4.8% 95.9%;
+  --accent-foreground: 240 5.9% 10%;
+  --destructive: 0 84.2% 60.2%;
+  --destructive-foreground: 0 0% 98%;
+  --border: 256 90% 90%;
+  --input: 240 5.9% 90%;
+  --ring: 240 5.9% 10%;
+  --radius: 0.3rem;
+}
 
-  .dark {
-    --background: 0 0% 7%;
-    --foreground: 0 0% 98%;
-    --card: 28 0% 12%;
-    --card-foreground: 0 0% 98%;
-    --popover: 240 10% 3.9%;
-    --popover-foreground: 0 0% 98%;
-    --primary: 302 0% 78%; /* #C8C8C8 */
-    --primary-foreground: 240 5.9% 10%;
-    --secondary: 302 0% 64%; /* #A4A4A4 */
-    --secondary-foreground: 0 0% 98%;
-    --muted: 0, 0%, 14%;
-    --muted-foreground: 240 5% 64.9%;
-    --accent: 240 3.7% 15.9%;
-    --accent-foreground: 0 0% 98%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 256 0% 26%;
-    --input: 240 3.7% 15.9%;
-    --ring: 240 4.9% 83.9%;
-  }
+.dark {
+  --background: 0 0% 7%;
+  --foreground: 0 0% 98%;
+  --card: 28 0% 12%;
+  --card-foreground: 0 0% 98%;
+  --popover: 240 10% 3.9%;
+  --popover-foreground: 0 0% 98%;
+  --primary: 302 0% 78%; /* #C8C8C8 */
+  --primary-foreground: 240 5.9% 10%;
+  --secondary: 302 0% 64%; /* #A4A4A4 */
+  --secondary-foreground: 0 0% 98%;
+  --muted: 0, 0%, 14%;
+  --muted-foreground: 240 5% 64.9%;
+  --accent: 240 3.7% 15.9%;
+  --accent-foreground: 0 0% 98%;
+  --destructive: 0 62.8% 30.6%;
+  --destructive-foreground: 0 0% 98%;
+  --border: 256 0% 26%;
+  --input: 240 3.7% 15.9%;
+  --ring: 240 4.9% 83.9%;
 }
 
 @layer base {
@@ -255,8 +253,12 @@ h5 {
   font-weight: var(--fw-black);
 }
 
+/* Utility Classes */
 .container {
-  @apply px-5 sm:px-[80px] mx-auto;
+  margin-inline: auto;
+  max-width: 1440px;
+  width: min(90%, 70.5rem);
+  /* border: 1px solid black; */
 }
 
 .scroll {
