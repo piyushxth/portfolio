@@ -68,7 +68,7 @@ import MobileNav from "./ui/mobile-nav";
 const DNavbar = () => {
   const pathname = usePathname();
   return (
-    <nav className=" container fixed  top-0 z-50 left-1/2 -translate-x-1/2 50 flex pr-2 h-12 items-center justify-between mt-2 rounded-full max-w-7xl backdrop-saturate-150 bg-white/[.90] dark:bg-background/[.65] backdrop-blur-lg ">
+    <nav className=" container fixed  top-0 z-50 left-1/2 -translate-x-1/2 50 flex pr-2 h-12 items-center justify-between mt-2 rounded-full max-w-7xl backdrop-saturate-150 bg-white/[.90] dark:bg-background/[.65] backdrop-blur-sm ">
       {/* <nav className="flex z-40 w-full h-12 items-center justify-between px-10 py-2 data-[menu-open=true]:border-none fixed top-0 inset-x-0 backdrop-blur-lg data-[menu-open=true]:backdrop-blur-xl backdrop-saturate-150 bg-white/[.90] dark:bg-background/[.65]"></nav> */}
       <div className="flex items-center gap-2">
         <motion.div

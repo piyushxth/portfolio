@@ -33,7 +33,7 @@ const Hero = () => {
         ease: "easeInOut",
       }}
       viewport={{ once: true }}
-      className="flex flex-col items-center gap-10 py-20 container"
+      className="flex flex-col items-center gap-10 container"
     >
       {" "}
       <div className="flex flex-col text-center  fw-extra-bold px-4 pt-10 sm:pt-16 ff-tertiary text-secondary dark:text-white">

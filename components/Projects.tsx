@@ -8,7 +8,7 @@ const Projects = () => {
       title: "Kamal’s Portfolio",
       description:
         "Created a custom blogging platform with Next.js, MongoDB, and JWT-based authentication. Enabled rich-text editing and dynamic content management.",
-      image: "/image.png",
+      image: "/project1.png",
       liveDemo: "https://kamalsami.vercel.app",
       github: "https://kamalsami.vercel.app",
       technologies: ["Next.js", "Tailwindcss", "Shadcn"],
