@@ -9,10 +9,10 @@ import {
 } from "lucide-react";
 
 export const Navlinks = [
-  { name: "Docs", href: "/", key: "Home" },
-  { name: "Blogs", href: "/My-Projects", key: "My-Projects" },
-  { name: "Showcase", href: "/About", key: "About" },
-  { name: "Contact", href: "/Contact", key: "Contact" },
+  { name: "Home", href: "#home", key: "home" },
+  { name: "Projects", href: "#projects", key: "projects" },
+  { name: "About", href: "#about", key: "about" },
+  { name: "Contact", href: "#contact", key: "contact" },
 ];
 
 interface ContactDetail {

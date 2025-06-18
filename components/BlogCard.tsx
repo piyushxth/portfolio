@@ -1,46 +1,86 @@
+"use client";
+
 import Link from "next/link";
 import Image from "next/image";
-import type { BlogPost } from "@/types/blog";
 
-interface BlogCardProps {
-  post: BlogPost;
-  featured?: boolean;
-}
+const blogPosts = [
+  {
+    slug: "the-only-nextjs-favicon-guide-youll-need",
+    title: "The Only Next.js Favicon Guide You'll Need (Updated 2025)",
+    excerpt:
+      "Learn how to properly add a Favicon to your Next.js application. No nonsense. No fluff.",
+    image: "/blog/blog1.jpg",
+    hidden: false,
+  },
+  {
+    slug: "introducing-blogfolio-v5",
+    title: "Introducing Blogfolio v5",
+    excerpt:
+      "I've been working hard on my website, and I'm pumped to show you what I've been up to this year. From new features to some behind-the-scenes tech magic, there's a lot to unpack in this 2024 update.",
+    image: "/blog/blog2.jpg",
+    hidden: false,
+  },
+  {
+    slug: "my-evolved-blogfolio-in-2023",
+    title: "My Evolved Blogfolio in 2023",
+    excerpt:
+      "The Tailwind Labs team has developed and released an official plugin that adds autocomplete to your VSCode environment, and it only takes a few clicks to enable!",
+    image: "/blog/blog3.jpeg",
+    hidden: false,
+  },
+  {
+    slug: "checking-if-the-url-contains-a-given-string-in-angular-a-comparison-of-three-approaches",
+    title:
+      "Checking if the URL Contains a Given String in Angular: A Comparison of Three Approaches",
+    excerpt:
+      "This article discusses three different approaches for checking if a URL contains a given string in Angular, including using the Location service, the JavaScript includes() method, and regular expressions.",
+    image: "/blog/blog3.jpeg",
+    hidden: true, // md:block lg:hidden
+  },
+];
 
-export default function BlogCard({ post, featured = false }: BlogCardProps) {
+export default function Blog() {
   return (
-    <article
-      className={`overflow-hidden group animate-fade-in shadow-lg dark:bg-card/50 ${
-        featured ? "md:col-span-2 md:row-span-2" : ""
-      }`}
-    >
-      <Link href={`/blog/${post.slug}`} className="flex flex-col h-full">
-        <div className="relative w-full">
-          <div className="relative aspect-[4/3] w-full overflow-hidden">
-            <Image
-              src={post.coverImage || "/placeholder.svg"}
-              alt={post.title}
-              fill
-              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-              className="object-cover transition-transform duration-500 group-hover:scale-105"
-            />
-          </div>
-        </div>
-        <div className="flex flex-col flex-grow p-6 space-y-4 text-center">
-          <h3 className="text-xl font-semibold text-foreground group-hover:text-red transition-colors">
-            {post.title}
-          </h3>
-          <p className="text-muted-foreground line-clamp-2 flex-grow">
-            {post.excerpt}
-          </p>
-          <button className="text-red hover:text-red/80 transition-colors inline-flex items-center justify-center gap-2 mt-2">
-            Continue Reading
-            <span className="group-hover:translate-x-1 transition-transform">
-              →
-            </span>
-          </button>
-        </div>
-      </Link>
-    </article>
+    <section className="mt-32 mb-10  relative flex flex-col gap-1 md:gap-10">
+      <div className="text-center flex flex-col gap-4">
+        <span className=" text-sm font-medium text-indigo-600">Blog</span>
+        <h2 className="mx-auto  max-w-lg text-balance text-center text-3xl font-medium leading-10 tracking-tight text-text-primary md:text-4xl">
+          I like sharing my experiments &amp;&amp; knowledge with others
+        </h2>
+      </div>
+      <div>
+        <ul className="container z-50 grid grid-cols-1 gap-2 md:grid-cols-2 lg:grid-cols-3">
+          {blogPosts.map((post, index) => (
+            <li
+              key={index}
+              className={`z-50 flex h-full flex-col rounded-3xl border border-border-primary bg-bg-primary p-2 ${
+                post.hidden ? "hidden md:block lg:hidden" : ""
+              }`}
+            >
+              <Link
+                href={`/blog/${post.slug}`}
+                className="flex h-full flex-col rounded-2xl"
+              >
+                <Image
+                  src={post.image}
+                  alt={post.title}
+                  width={500}
+                  height={300}
+                  className="h-[280px] w-full rounded-2xl object-cover md:h-[225px]"
+                />
+                <div className="my-4 flex w-full flex-grow flex-col space-y-4 text-balance px-4">
+                  <h2 className="text-lg font-medium leading-7 tracking-tight text-primary">
+                    {post.title}
+                  </h2>
+                  <p className="flex-grow leading-7 text-secondary">
+                    {post.excerpt}
+                  </p>
+                </div>
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </section>
   );
 }

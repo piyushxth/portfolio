@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
@@ -8,62 +8,53 @@ import MobileNav from "./ui/mobile-nav";
 import { Navlinks } from "@/constants";
 
 const ENavbar = () => {
-  const [atTop, setAtTop] = useState(true);
-  useEffect(() => {
-    const handleScroll = () => {
-      setAtTop(window.scrollY <= 10);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
   return (
-    <>
-      <div className="w-full p-2"></div>
-
-      <header
-        className={`bg-transparent backdrop-blur-none sticky top-0 z-50 transition-all duration-300  ${
-          atTop
-            ? "bg-transparent"
-            : "backdrop-saturate-150 bg-white/[.90] dark:bg-background/[.65] backdrop-blur-sm"
-        }`}
+    <header className="w-full" role="banner">
+      <nav
+        aria-label="Primary Navigation"
+        className="container flex h-16 items-center justify-between"
       >
-        <nav className="container relative flex justify-between items-center">
-          <motion.div
-            whileHover={{ scale: 1.2 }}
-            whileTap={{ scale: 0.9 }}
-            className="flex items-center cursor-pointer"
-          >
-            <Link href="/">
-              <Image
-                src="/sa.png"
-                alt="logo"
-                height={40}
-                width={40}
-                className="w-12 h-12 object-contain"
-                priority
-              />
-            </Link>
-          </motion.div>
-          <div className="flex items-center gap-6">
-            {Navlinks.map((link) => (
-              <div key={link.key} className="hidden sm:flex relative uppercase">
-                <Link
-                  href={link.href}
-                  className="font-semibold hover:opacity-100 opacity-80 transition-colors"
-                >
-                  {link.name}
-                </Link>
-              </div>
-            ))}
-            <div className="flex gap-2 items-center">
-              <ModeToggle />
-              <MobileNav />
-            </div>
+        {/* Logo */}
+        <motion.div
+          whileHover={{ scale: 1.1 }}
+          whileTap={{ scale: 0.95 }}
+          className="cursor-pointer"
+        >
+          <Link href="/" aria-label="Go to home">
+            <Image
+              src="/sa.png"
+              alt="Site logo"
+              width={40}
+              height={40}
+              className="h-12 w-12 object-contain"
+              priority
+            />
+          </Link>
+        </motion.div>
+
+        {/* Desktop Nav */}
+        <ul className="flex place-items-center space-x-4 rounded-full border border-border-primary px-5 py-2 text-sm text-gray-500">
+          {Navlinks.map((link) => (
+            <li key={link.key}>
+              <Link
+                href={link.href}
+                className="font-medium transition-colors text-primary/90 hover:text-primary"
+              >
+                {link.name}
+              </Link>
+            </li>
+          ))}
+        </ul>
+
+        {/* Right actions */}
+        <div className="flex items-center space-x-2">
+          <ModeToggle />
+          <div className="md:hidden">
+            <MobileNav />
           </div>
-        </nav>
-      </header>
-    </>
+        </div>
+      </nav>
+    </header>
   );
 };
 

@@ -8,15 +8,18 @@ import { Button } from "./ui/button";
 
 const About1 = () => {
   return (
-    <>
-      <section className="container my-32 flex flex-col xl:flex-row justify-center pb-20 relative">
+    <section className="mt-32 mb-10  relative flex flex-col gap-1 md:gap-10">
+      <div className=" text-center flex flex-col gap-4">
+        <span className=" text-sm font-medium text-indigo-600">About</span>
+        <h2 className="mx-auto  max-w-lg text-balance text-center text-3xl font-medium leading-10 tracking-tight text-text-primary md:text-4xl">
+          Here&apos;s what sets me apart and makes me unique
+        </h2>
+      </div>
+
+      <div className="container  flex flex-col xl:flex-row justify-center relative">
         <div className=" text-fs-2xl">
           <div className="space-y-7">
-            <h1 className="mb-5 space-y-4 text-center text-primary">
-              About Me
-            </h1>
-
-            <p className="text-[#424242] font-medium dark:text-[#a1a1aa] text-fs-2xl md:text-[24px] md:leading-relaxed">
+            <p className="text-[#424242]  dark:text-[#a1a1aa] text-lg md:leading-relaxed">
               Hi, I&apos;m a frontend developer passionate about building
               modern, responsive, and user-friendly web applications. I
               specialize in{" "}
@@ -25,13 +28,13 @@ const About1 = () => {
               </span>
               , creating seamless and high-performing websites.
             </p>
-            <p className="text-[#424242] font-medium dark:text-[#a1a1aa] text-fs-2xl md:text-[24px] md:leading-relaxed">
+            <p className="text-[#424242]  dark:text-[#a1a1aa] text-lg md:leading-relaxed">
               Over the years, I&apos;ve worked on various projects, from{" "}
               <span className="text-red">eCommerce platforms </span>
               to admin dashboards and travel websites. I love bringing ideas to
               life through clean design and efficient code.
             </p>
-            <p className="text-[#424242] font-medium dark:text-[#a1a1aa] text-fs-2xl md:text-[24px] md:leading-relaxed">
+            <p className="text-[#424242]  dark:text-[#a1a1aa] text-lg md:leading-relaxed">
               I&apos;m always open to collaborating with startups, businesses,
               or agencies needing
               <span className="text-green">
@@ -53,7 +56,7 @@ const About1 = () => {
           </div>
         </div>
 
-        <div className="hidden lg:block min-w-[30rem] pt-10">
+        <div className="hidden lg:block min-w-[30rem]">
           <div className="sticky top-24 rounded-lg">
             <CardContainer className="min-w-[30rem] h-full">
               <CardBody className=" group/card w-full h-[80%] rounded-xl flex justify-center">
@@ -75,8 +78,8 @@ const About1 = () => {
             </div> */}
           </div>
         </div>
-      </section>
-    </>
+      </div>
+    </section>
   );
 };
 

@@ -16,6 +16,7 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import BlogCard from "@/components/BlogCard";
 import { blogPosts } from "@/data/blog-posts";
+import Blog from "@/components/BlogCard";
 
 export default function Home() {
   // Get the featured post
@@ -27,43 +28,23 @@ export default function Home() {
     .slice(0, 5);
   return (
     <>
-      <ENavbar />
       <Spotlight
         className="h-[40rem] -top-40 left-0 md:left-60 md:-top-20"
         fill="white"
       />{" "}
       <div className="dark:bg-grid-white/[0.01] bg-grid-black/[0.04]">
-        {" "}
+        <ENavbar />
+
         <Hero />
       </div>
+      {/* <About1 /> */}
       <Projects />
-      <About1 />
       <SkillsScroll />
       <Experience />
       {/* Recent Posts */}
-      <section className="my-32 container">
-        <div className="mb-20 space-y-4 text-center text-primary">
-          <h1>Blog Posts</h1>
-          <h5 className="tracking-wider text-fs-xl">
-            A collection of blogs I&apos;ve built.
-          </h5>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-          {recentPosts.map((post) => (
-            <BlogCard key={post.id} post={post} />
-          ))}
-        </div>
-        <Link
-          href="/blog"
-          className="flex items-center justify-center text-2xl my-10 text-secondary hover:text-red/80 transition-colors"
-        >
-          View All
-          <ArrowRight className="ml-2 h-4 w-4" />
-        </Link>
-      </section>
-      <Contact />
-      {/* <Subscribe /> */}
+      <BlogCard />
+      {/* <Contact /> */}
+      <Subscribe />
       {/* <ShootingStars />
       <StarsBackground /> */}
       {/* <About /> */}
