@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import "./homeGlobals.css";
 import { ThemeProvider } from "@/components/ui/theme-provider";
-import DNavbar from "@/components/DNavbar";
 import Footer from "@/components/Footer";
 import TanstackProviders from "@/components/Providers";
+import RootNavbar from "@/components/RootNavbar";
 
 export const metadata: Metadata = {
   title: "Portfolio",
@@ -25,6 +25,7 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <TanstackProviders>
+            <RootNavbar />
             <main className="">
               <div className=" relative">{children}</div>
             </main>

@@ -24,24 +24,24 @@ const Footer = () => {
           </Link>
 
           <p className="w-60 leading-5 ">
-            I&apos;m Braydon – a senior front-end developer, blogger, and public
+            I&apos;m Piyush – a senior front-end developer, blogger, and public
             speaker. Thanks for checking out my site!
           </p>
-          <p className="mt-6 ">© 2025 Braydon Coyer</p>
+          <p className="mt-6 ">© 2025 Piyush Shrestha</p>
         </div>
 
         <div className="flex w-full items-end justify-end pr-16">
           <div className="z-30 flex items-center gap-2 rounded-full bg-dark-primary px-3 py-1.5">
-            <a href="https://twitter.com/BraydonCoyer" aria-label="Twitter">
+            <a href="https://twitter.com/PiyushShrestha" aria-label="Twitter">
               <TwitterLogoIcon />
             </a>
             <a
-              href="https://www.linkedin.com/in/braydon-coyer/"
+              href="https://www.linkedin.com/in/piyushshrestha/"
               aria-label="LinkedIn"
             >
               <LinkedInLogoIcon />
             </a>
-            <a href="https://github.com/braydoncoyer" aria-label="GitHub">
+            <a href="https://github.com/piyushshrestha" aria-label="GitHub">
               <GitHubLogoIcon />
             </a>
           </div>
@@ -96,7 +96,7 @@ const Footer = () => {
               <li>
                 <a
                   className="hover:text-primary"
-                  href="https://braydoncoyer.lemonsqueezy.com/"
+                  href="https://piyushshrestha.lemonsqueezy.com/"
                   target="_blank"
                   rel="noopener noreferrer"
                 >

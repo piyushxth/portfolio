@@ -62,8 +62,8 @@ const Hero = () => {
                       />
                     </div>
                   </div> */}
-      <div className="relative text-balance flex flex-col text-center  fw-extra-bold px-4 pt-10 sm:pt-16 ff-tertiary dark:text-white">
-        <div className="relative w-full before:absolute before:top-0 before:h-px before:bg-border-primary/50 before:-left-4 before:right-[-1rem] md:before:-left-8 md:before:right-[-2rem] lg:before:inset-x-0 after:-left-4 after:right-[-1rem] md:after:-left-8 md:after:right-[-2rem] lg:after:inset-x-0 after:absolute after:bottom-0 after:h-px after:bg-border-primary/50">
+      <div className="relative text-wrap md:text-balance flex flex-col text-center  fw-extra-bold px-4 pt-10 sm:pt-16 ff-tertiary dark:text-white">
+        <div className="relative w-full">
           <h1 className="mx-auto max-w-2xl text-center text-4xl font-medium leading-tight tracking-tighter text-text-primary md:text-6xl md:leading-[64px]">
             Hey, I&apos;m{" "}
             <Cover>
@@ -72,7 +72,7 @@ const Hero = () => {
             <br /> Welcome to my corner of the internet!
           </h1>
         </div>
-        <div className="relative w-full before:absolute before:top-0 before:h-px before:bg-border-primary/50 before:-left-4 before:right-[-1rem] md:before:-left-8 md:before:right-[-2rem] lg:before:inset-x-0 after:-left-4 after:right-[-1rem] md:after:-left-8 md:after:right-[-2rem] lg:after:inset-x-0 after:absolute after:bottom-0 after:h-px after:bg-border-primary/50">
+        <div className="relative w-full">
           <div className="mt-4 text-center md:mt-8">
             <p className="leading-8 font-normal text-secondary">
               I&apos;m a full-stack developer with a love for design and a knack

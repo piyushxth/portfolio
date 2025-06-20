@@ -14,9 +14,8 @@ import Contact from "@/components/Contact";
 import Subscribe from "@/components/Subscribe";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
-import BlogCard from "@/components/BlogCard";
 import { blogPosts } from "@/data/blog-posts";
-import Blog from "@/components/BlogCard";
+import Blog from "@/components/Blog";
 
 export default function Home() {
   // Get the featured post
@@ -34,7 +33,6 @@ export default function Home() {
       />{" "}
       <div className="dark:bg-grid-white/[0.01] bg-grid-black/[0.04]">
         <ENavbar />
-
         <Hero />
       </div>
       {/* <About1 /> */}
@@ -42,7 +40,20 @@ export default function Home() {
       <SkillsScroll />
       <Experience />
       {/* Recent Posts */}
-      <BlogCard />
+      <section className="mt-32 mb-10 relative flex flex-col gap-10">
+        {/* Heading Section */}
+        <div className="text-center flex flex-col gap-4">
+          <span className="text-sm font-medium text-indigo-600">Blog</span>
+          <h2 className="mx-auto max-w-lg text-balance text-center text-3xl font-medium leading-10 tracking-tight text-text-primary md:text-4xl">
+            I like sharing my experiments &amp;&amp; knowledge with others
+          </h2>
+        </div>
+
+        {/* Blog Grid Section */}
+        <div>
+          <Blog />
+        </div>
+      </section>
       {/* <Contact /> */}
       <Subscribe />
       {/* <ShootingStars />

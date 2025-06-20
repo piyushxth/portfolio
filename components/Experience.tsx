@@ -156,7 +156,7 @@ const experiences = [
 
 const Experience = () => {
   return (
-    <section className="mt-32 mb-10 mx-auto max-w-6xl px-4 py-20 relative flex flex-col gap-1 md:gap-10">
+    <section className="mt-32 mb-10 mx-auto max-w-6xl px-4 py-20 relative flex flex-col gap-10">
       <div className=" text-center flex flex-col gap-4">
         <span className=" text-sm font-medium text-indigo-600">
           Work Experience
@@ -169,10 +169,7 @@ const Experience = () => {
       {/* Experience Cards */}
       <div className="relative divide-y divide-gray-100">
         {/* Timeline vertical line & image */}
-        <div
-          className="absolute top-0 hidden h-full w-12 md:block"
-          style={{ left: "25%" }}
-        >
+        <div className="absolute top-0 left-[5%] md:left-[25%] h-full w-12 ">
           <div className="absolute top-0 bottom-0 left-1/2 w-2 -translate-x-1/2 rounded-full bg-[#E8ECEF] shadow-[inset_0_2px_1.5px_rgba(165,174,184,0.32)]" />
 
           <div className="sticky top-1/2 -translate-y-1/2">
@@ -182,7 +179,7 @@ const Experience = () => {
                 src="/face.png"
                 width={100}
                 height={100}
-                className="object-cover h-12"
+                className="object-cover h-12 w-auto"
               />
             </div>
           </div>
@@ -209,6 +206,7 @@ const Experience = () => {
                     alt={exp.company}
                     src={exp.image}
                     fill
+                    sizes="40px"
                     className="object-cover"
                   />
                 </div>

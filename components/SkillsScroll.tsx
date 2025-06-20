@@ -248,14 +248,13 @@ const skills = [
 
 const SkillsGrid = () => {
   return (
-    <section className="mt-32 mb-10 text-center">
-      <div className="mb-10 flex flex-col gap-4">
-        <span className="text-sm font-medium text-indigo-600">Skills</span>
-        <h2 className="mx-auto max-w-lg text-3xl font-medium text-text-primary md:text-4xl">
+    <section className="mt-32 mb-10 text-center  flex flex-col gap-10">
+      <div className="text-center flex flex-col gap-4">
+        <span className=" text-sm font-medium text-indigo-600">Skills</span>
+        <h2 className="mx-auto  max-w-lg text-balance text-center text-3xl font-medium leading-10 tracking-tight text-text-primary md:text-4xl">
           Things I&apos;m good at — and always improving
         </h2>
       </div>
-
       <div className="flex flex-wrap justify-center gap-6">
         {skills.map((icon, index) => (
           <motion.div
@@ -268,8 +267,9 @@ const SkillsGrid = () => {
             <Image
               src={`/skills-icons/${icon}`}
               alt={icon.replace(".png", "")}
-              fill
-              className="object-contain"
+              width={80}
+              height={80}
+              className="object-contain h-[60px] w-auto"
             />
           </motion.div>
         ))}
