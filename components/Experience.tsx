@@ -190,9 +190,9 @@ const Experience = () => {
             className="grid grid-cols-[1fr,5fr] gap-6 py-12 md:grid-cols-[2fr,1fr,4fr]"
           >
             {/* Company Info */}
-            <div className="hidden md:block">
+            <div className="hidden md:flex flex-col gap-1">
               <h3 className="text-xl font-bold">{exp.company}</h3>
-              <p className="text-sm text-gray-600">{exp.date}</p>
+              <p className="text-sm text-secondary">{exp.date}</p>
             </div>
 
             {/* Spacer */}
@@ -210,9 +210,9 @@ const Experience = () => {
                     className="object-cover"
                   />
                 </div>
-                <div>
+                <div className="flex flex-col gap-1">
                   <h4 className="text-lg font-semibold">{exp.role}</h4>
-                  <p className="text-gray-600 text-sm">{exp.description}</p>
+                  <p className="text-secondary text-sm">{exp.description}</p>
                 </div>
               </div>
             </div>

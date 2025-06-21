@@ -8,7 +8,7 @@ import {
 
 const Footer = () => {
   return (
-    <footer className="max-w-6xl container lg:flex border-t mt-20">
+    <footer className="max-w-6xl container lg:flex border-t mt-20 text-gray-500">
       {/* Left Side */}
       <div className="flex w-full py-6 text-sm">
         <div className="flex-grow space-y-6">
@@ -24,8 +24,8 @@ const Footer = () => {
           </Link>
 
           <p className="w-60 leading-5 ">
-            I&apos;m Piyush – a senior front-end developer, blogger, and public
-            speaker. Thanks for checking out my site!
+            Hey, I&apos;m Piyush — a full-stack developer who loves building
+            cool stuff on the web. Thanks for checking out my site!
           </p>
           <p className="mt-6 ">© 2025 Piyush Shrestha</p>
         </div>
