@@ -4,114 +4,124 @@ import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import { useMemo } from "react";
 
+// Mock Category Data (DB-style)
 const categories = [
-  "all",
-  "programming",
-  "react",
-  "javascript",
-  "personal",
-  "angular",
-  "testing",
-  "tailwind",
-  "css",
-  "career",
-  "html",
-  "design",
-  "devops",
+  {
+    id: "all",
+    label: "All",
+    heading: "Insightful && helpful content curated for you.",
+  },
+  {
+    id: "programming",
+    label: "Programming",
+    heading: "Deep dive into the world of code and software engineering.",
+  },
+  {
+    id: "react",
+    label: "React",
+    heading:
+      "Build interactive UIs faster with React insights and best practices.",
+  },
+  {
+    id: "javascript",
+    label: "JavaScript",
+    heading: "All things JavaScript – from fundamentals to advanced patterns.",
+  },
+  {
+    id: "tailwind",
+    label: "Tailwind",
+    heading: "Explore Tailwind CSS tips, tricks, and design workflows.",
+  },
 ];
 
+// Mock Blog Data (DB-style)
 const blogData = [
   {
+    id: 1,
     title: "The Only Next.js Favicon Guide You'll Need (Updated 2025)",
+    slug: "the-only-nextjs-favicon-guide-youll-need",
     description:
       "Learn how to properly add a Favicon to your Next.js application. No nonsense. No fluff.",
-    slug: "the-only-nextjs-favicon-guide-youll-need",
     date: "2025-06-11",
     reads: 1463,
-    category: "react",
+    categoryId: "react",
   },
   {
+    id: 2,
     title: "Why You Should Learn Tailwind in 2025",
+    slug: "why-you-should-learn-tailwind",
     description:
       "Tailwind is more than just a utility-first framework. Here's why it matters.",
-    slug: "why-you-should-learn-tailwind",
     date: "2025-05-20",
     reads: 981,
-    category: "tailwind",
+    categoryId: "tailwind",
   },
   {
+    id: 3,
     title: "Understanding JavaScript Closures Once and For All",
-    description: "Closures explained with real-world examples and zero jargon.",
     slug: "understanding-javascript-closures",
-    date: "2025-04-15",
-    reads: 1211,
-    category: "javascript",
-  },
-  {
-    title: "Understanding JavaScript Closures Once and For All",
     description: "Closures explained with real-world examples and zero jargon.",
-    slug: "understanding-javascript-closure",
     date: "2025-04-15",
     reads: 1211,
-    category: "javascript",
-  },
-  {
-    title: "Understanding JavaScript Closures Once and For All",
-    description: "Closures explained with real-world examples and zero jargon.",
-    slug: "understanding-javascript-closur",
-    date: "2025-04-15",
-    reads: 1211,
-    category: "javascript",
+    categoryId: "javascript",
   },
 ];
 
 export default function BlogPage() {
   const searchParams = useSearchParams();
-  const currentCategory = searchParams.get("category") || "all";
+  const currentCategoryId = searchParams.get("category") || "all";
 
+  // Get current category object
+  const currentCategory =
+    categories.find((c) => c.id === currentCategoryId) || categories[0]; // fallback to "all"
+
+  // Filter blogs
   const filteredBlogs = useMemo(() => {
-    if (currentCategory === "all") return blogData;
-    return blogData.filter((blog) => blog.category === currentCategory);
-  }, [currentCategory]);
+    if (currentCategoryId === "all") return blogData;
+    return blogData.filter((blog) => blog.categoryId === currentCategoryId);
+  }, [currentCategoryId]);
 
   return (
     <section className="container mt-14 mb-10 relative flex flex-col gap-10">
+      {/* Heading Section */}
       <div className="text-center flex flex-col gap-4">
         <h1 className="mx-auto max-w-2xl text-center text-4xl font-medium leading-tight tracking-tighter text-primary md:text-6xl md:leading-[64px]">
-          Insightful &amp;&amp; helpful content curated for you.
+          {currentCategory.heading}
         </h1>
       </div>
 
+      {/* Category Section */}
       <div className="space-y-4">
-        <h3 className="text-base font-semibold text-secondary">Categories</h3>
-
+        <h3 className="text-base font-semibold">Categories</h3>
         <div className="hidden lg:block">
           <nav className="-mb-px flex flex-wrap gap-4">
             {categories.map((category) => {
-              const label = category === "all" ? "All" : category;
               const href =
-                category === "all" ? "/blog" : `/blog?category=${category}`;
+                category.id === "all"
+                  ? "/blog"
+                  : `/blog?category=${category.id}`;
 
               return (
                 <Link
-                  key={category}
+                  key={category.id}
                   href={href}
                   className={`whitespace-nowrap border-b-2 pb-4 text-sm uppercase transition-colors ${
-                    currentCategory === category
-                      ? "border-slate-900 text-slate-900"
-                      : "border-transparent text-slate-500 hover:border-slate-300 hover:text-slate-700"
+                    currentCategoryId === category.id
+                      ? "border-slate-300 text-primary"
+                      : "border-transparent text-secondary hover:border-slate-300 hover:text-primary"
                   }`}
                 >
-                  {label}
+                  {category.label}
                 </Link>
               );
             })}
           </nav>
         </div>
 
+        {/* Blog List */}
         <ul className="flex flex-col">
           {filteredBlogs.map((blog) => (
-            <li key={blog.slug}>
+            <li key={blog.id}>
               <div className="block">
                 <article>
                   <div className="group grid h-full grid-cols-1 md:grid-cols-12">
@@ -134,7 +144,7 @@ export default function BlogPage() {
                     <div className="col-start-4 hidden h-full border-x border-border-primary md:block md:border-dashed"></div>
                     <div className="group col-span-8 flex w-full flex-grow flex-col py-4 md:col-start-5 md:col-end-12 md:p-4">
                       <div className="z-10 text-balance">
-                        <h2 className="mb-3 text-base font-medium leading-6 tracking-tight text-slate-900 md:leading-none">
+                        <h2 className="mb-3 text-base font-medium leading-6 tracking-tight text-primary md:leading-none">
                           {blog.title}
                         </h2>
                         <p className="mb-3 flex-grow text-base leading-6 text-secondary">
@@ -156,7 +166,7 @@ export default function BlogPage() {
                             strokeLinecap="round"
                             strokeLinejoin="round"
                           >
-                            <path d="M0 0L3 3L0 6"></path>
+                            <path d="M0 0L3 3L0 6" />
                           </svg>
                         </Link>
                       </div>

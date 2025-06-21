@@ -40,7 +40,7 @@ const RootNavbar = () => {
         </motion.div>
 
         {/* Desktop Nav */}
-        <ul className="flex place-items-center space-x-4 rounded-full border border-border-primary px-5 py-2 text-sm text-gray-500">
+        <ul className="hidden md:flex place-items-center space-x-4 rounded-full border border-border-primary px-5 py-2 text-sm text-gray-500">
           {Navlinks.map((link) => (
             <li key={link.key}>
               <Link
