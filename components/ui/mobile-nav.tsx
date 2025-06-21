@@ -1,4 +1,5 @@
 "use client";
+
 import Image from "next/image";
 import Link from "next/link";
 import { Menu } from "lucide-react";
@@ -14,58 +15,66 @@ import {
 import { VisuallyHidden } from "@radix-ui/themes";
 import { usePathname } from "next/navigation";
 import Socials from "../Socials";
-import { Navlinks } from "@/constants/index";
-import { motion } from "framer-motion";
+import { Navlinks } from "@/constants";
 
 const MobileNav = () => {
   const pathname = usePathname();
+
   return (
-    <div>
-      <Sheet>
-        <SheetTrigger asChild>
-          <Button variant="outline" size="icon" className="sm:hidden">
-            <Menu className="h-5 w-5" />
-            <span className="sr-only">Toggle navigation menu</span>
-          </Button>
-        </SheetTrigger>
-        <SheetContent side="left" className="flex flex-col">
-          <div className="flex justify-center h-14 items-center border-b px-4 lg:h-[60px] lg:px-6">
-            <Link href="/" className="flex items-center gap-2 font-semibold">
-              <Image src={"/sa.png"} alt="logo" height={40} width={40} />
-              <span className="">Piyush Shrestha</span>
-            </Link>
-          </div>
-          <VisuallyHidden>
-            <SheetTitle className="text-sm px-3">Main Links</SheetTitle>
-            <SheetDescription>Sidebar navigation links</SheetDescription>
-          </VisuallyHidden>
-          <nav className="grid pt-10 items-center px-2 text-sm font-medium lg:px-4">
-            {Navlinks.map((link) => (
-              <motion.div
-                key={link.key} // Ensure each motion.div has a unique key
-                whileHover={{ scale: 1.1 }}
-                transition={{ type: "tween" }}
-              >
-                <SheetClose asChild>
-                  <Link
-                    key={link.key} // This key is not necessary on the Link component itself
-                    href={link.href}
-                    className={`flex items-center gap-3 rounded-lg px-2 py-2 text-muted-foreground transition-transform duration-300 hover:text-primary justify-center ${
-                      pathname === link.href ? "text-primary" : ""
-                    }`}
-                  >
-                    {link.name}
-                  </Link>
-                </SheetClose>
-              </motion.div>
-            ))}
-          </nav>
-          <div className="pt-10">
-            <Socials />
-          </div>
-        </SheetContent>
-      </Sheet>
-    </div>
+    <Sheet>
+      <SheetTrigger asChild>
+        <Button variant="outline" size="icon" className="md:hidden">
+          <Menu className="h-5 w-5" />
+          <span className="sr-only">Toggle navigation menu</span>
+        </Button>
+      </SheetTrigger>
+
+      <SheetContent
+        side="left"
+        className="flex flex-col w-full max-w-none p-0" // Full width
+      >
+        {/* Logo */}
+        <div className="flex h-14 items-center justify-center border-b px-4 lg:h-[60px] lg:px-6">
+          <Link href="/" className="flex items-center gap-2 font-semibold">
+            <Image src="/sa.png" alt="logo" height={40} width={40} />
+            <span>Piyush Shrestha</span>
+          </Link>
+        </div>
+
+        {/* Accessibility metadata */}
+        <VisuallyHidden>
+          <SheetTitle className="text-sm px-3">Main Links</SheetTitle>
+          <SheetDescription>Sidebar navigation links</SheetDescription>
+        </VisuallyHidden>
+
+        {/* Navigation Grid */}
+        <nav className="grid grid-cols-1 gap-1 px-2 pt-10 text-xl font-medium sm:px-4">
+          {Navlinks.map((link) => {
+            const isActive = pathname === link.href;
+            return (
+              <SheetClose asChild key={link.key}>
+                <Link
+                  href={link.href}
+                  aria-current={isActive ? "page" : undefined}
+                  className={`rounded-lg  px-3 py-2 text-xl/9 ${
+                    isActive
+                      ? "text-primary"
+                      : "text-secondary hover:text-primary"
+                  } data-active:bg-gray-950/5`}
+                >
+                  {link.name}
+                </Link>
+              </SheetClose>
+            );
+          })}
+        </nav>
+
+        {/* Social Links */}
+        <div className="px-2 sm:px-4 pt-10">
+          <Socials />
+        </div>
+      </SheetContent>
+    </Sheet>
   );
 };
 
