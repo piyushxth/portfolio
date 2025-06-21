@@ -1,12 +1,14 @@
+import Blog from "@/components/Blog";
+import Subscribe from "@/components/Subscribe";
 import React from "react";
 
 const page = async ({ params }: { params: Promise<{ slug: string }> }) => {
   const slug = (await params).slug;
   console.log("Slug:", slug);
   return (
-    <div className="container">
+    <section className="container flex flex-col gap-10">
       <div
-        className="drama-shadow flex h-[350px] w-full flex-col justify-end rounded-2xl bg-cover bg-center bg-no-repeat p-8 md:mb-16 md:h-[600px] md:p-16"
+        className="drama-shadow flex h-[350px] w-full flex-col justify-end rounded-2xl bg-cover bg-center bg-no-repeat p-8 md:h-[600px] md:p-16"
         style={{
           backgroundImage: `linear-gradient(to top, rgb(99, 102, 241) 0%, rgba(99, 102, 241, 0.1) 30%, transparent 35%), url("/blog/blog1.jpg")`,
         }}
@@ -129,7 +131,42 @@ const page = async ({ params }: { params: Promise<{ slug: string }> }) => {
           </div>
         </div>
       </div>
-    </div>
+      <div className="grid grid-cols-[1fr_min(75ch,100%)_1fr] z-10">
+        <div className="col-start-2">
+          <p className="mb-6 text-base leading-8 text-secondary">
+            You're probably here because you published your Next.js application
+            and noticed that either:
+          </p>
+          <ol className="mb-8 list-decimal pl-8">
+            <li className="mb-4 text-base leading-8 text-secondary">
+              You forgot to include a favicon, or
+            </li>
+            <li className="mb-4 text-base leading-8 text-secondary">
+              You forgot to include a favicon, or
+            </li>
+          </ol>
+          <p className="mb-6 text-base leading-8 text-secondary">
+            The Next.js documentation is difficult to understand in this area
+            and doesn't clearly call out many of the gotchas and magic behavior
+            that Next.js handles behind the scenes. This article will show you
+          </p>
+        </div>
+      </div>
+
+      <div className="relative space-y-4">
+        <div className="relative flex items-center justify-center">
+          <span className="absolute left-1/2 h-px w-full -translate-x-1/2 transform bg-border-primary/50"></span>
+          <div className="z-10 grid place-items-center rounded-[200px] border border-border-primary bg-[#F7F7F8] px-5 py-0.5 text-base font-medium uppercase text-slate-600">
+            <span>Similar Posts</span>
+          </div>
+        </div>
+        <h2 className="mx-auto max-w-lg text-balance text-center text-3xl font-medium leading-10 tracking-tighter text-text-primary">
+          Here are some other articles you might find interesting.
+        </h2>
+      </div>
+      <Blog />
+      <Subscribe />
+    </section>
   );
 };
 
