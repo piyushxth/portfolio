@@ -41,7 +41,7 @@ const blogPosts = [
 
 export default function Blog() {
   return (
-    <ul className="container z-50 grid grid-cols-1 gap-2 md:grid-cols-2 lg:grid-cols-3">
+    <ul className=" z-50 grid grid-cols-1 gap-2 md:grid-cols-2 lg:grid-cols-3">
       {blogPosts.map((post, index) => (
         <li
           key={index}

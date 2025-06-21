@@ -35,33 +35,6 @@ const Hero = () => {
       viewport={{ once: true }}
       className="flex flex-col items-center gap-10 container"
     >
-      {" "}
-      {/* <div className="flex flex-col text-center  fw-extra-bold px-4 pt-10 sm:pt-16 ff-tertiary text-secondary dark:text-white">
-                    <h1>
-                      {"Hey, I'm "}
-                      <Cover>
-                        <span className="text-red">Piyush!</span>
-                      </Cover>
-                    </h1>
-                    <p className="pt-2 text-fs-5xl sm:text-fs-7xl xl:text-fs-8xl max-w-[650px] leading-normal md:leading-tight">
-                      Welcome to my corner of the internet!
-                    </p>
-                    <div className="text-fs-2xl pt-2 md:pt-8 fw-semi-bold text-[#994ECC]">
-                      <Typewriter
-                        options={{
-                          strings: [
-                            "Web Developer",
-                            "UI/UX Designer",
-                            "Full Stack Developer",
-                          ],
-                          autoStart: true,
-                          loop: true,
-                          delay: 60,
-                          deleteSpeed: 60,
-                        }}
-                      />
-                    </div>
-                  </div> */}
       <div className="relative text-wrap md:text-balance flex flex-col text-center  fw-extra-bold px-4 pt-10 sm:pt-16 ff-tertiary dark:text-white">
         <div className="relative w-full">
           <h1 className="mx-auto max-w-2xl text-center text-4xl font-medium leading-tight tracking-tighter text-text-primary md:text-6xl md:leading-[64px]">
