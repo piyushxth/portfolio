@@ -1,9 +1,9 @@
 import { getToken } from "next-auth/jwt";
 import { NextRequest, NextResponse } from "next/server";
 
-// Public routes and APIs
-const PUBLIC_ROUTES = [
-  "/",
+// Public routes and APIs (prefixes)
+const PUBLIC_PREFIXES = [
+  "/", // includes root
   "/demo",
   "/login",
   "/signup",
@@ -11,12 +11,10 @@ const PUBLIC_ROUTES = [
   "/projects",
   "/about",
   "/contact",
-  "/blog/[slug]",
-  "/projects/[slug]",
 ];
+
 const PUBLIC_API_ROUTES = ["/api/public-data"];
-// Admin routes
-const ADMIN_ROUTES = ["/admin"];
+const ADMIN_PREFIX = "/admin";
 
 export async function middleware(req: NextRequest) {
   const { pathname } = req.nextUrl;
@@ -34,18 +32,20 @@ export async function middleware(req: NextRequest) {
     });
   }
 
-  // Check if the route is public (login, signup, etc.)
-  if (
-    PUBLIC_ROUTES.includes(pathname) ||
-    PUBLIC_API_ROUTES.includes(pathname)
-  ) {
+  // ✅ Public route check
+  const isPublicRoute = PUBLIC_PREFIXES.some(
+    (prefix) => pathname === prefix || pathname.startsWith(`${prefix}/`)
+  );
+
+  const isPublicApi = PUBLIC_API_ROUTES.includes(pathname);
+
+  if (isPublicRoute || isPublicApi) {
     if (token) {
       if (pathname === "/login") {
         return NextResponse.redirect(
           new URL(token.role === "admin" ? "/admin" : "/", req.url)
         );
       }
-
       if (pathname === "/signup") {
         return new NextResponse(
           "You are logged in and cannot create a new account",
@@ -56,13 +56,13 @@ export async function middleware(req: NextRequest) {
     return NextResponse.next();
   }
 
-  // For all other routes (protected routes)
+  // ✅ Require login for protected routes
   if (!token) {
     return NextResponse.redirect(new URL("/login", req.url));
   }
 
-  // Admin-specific route protection
-  if (ADMIN_ROUTES.includes(pathname) && token.role !== "admin") {
+  // ✅ Admin route protection
+  if (pathname.startsWith(ADMIN_PREFIX) && token.role !== "admin") {
     return NextResponse.redirect(new URL("/", req.url));
   }
 

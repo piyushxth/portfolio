@@ -1,5 +1,6 @@
 "use client";
 
+import Blog from "@/components/Blog";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import { useMemo } from "react";
@@ -88,6 +89,7 @@ export default function BlogPage() {
         <h1 className="mx-auto max-w-2xl text-center text-4xl font-medium leading-tight tracking-tighter text-primary md:text-6xl md:leading-[64px]">
           {currentCategory.heading}
         </h1>
+        {currentCategoryId === "all" && <Blog />}
       </div>
 
       {/* Category Section */}
