@@ -2,7 +2,18 @@ import { getToken } from "next-auth/jwt";
 import { NextRequest, NextResponse } from "next/server";
 
 // Public routes and APIs
-const PUBLIC_ROUTES = ["/", "/demo", "/login", "/signup"];
+const PUBLIC_ROUTES = [
+  "/",
+  "/demo",
+  "/login",
+  "/signup",
+  "/blog",
+  "/projects",
+  "/about",
+  "/contact",
+  "/blog/[slug]",
+  "/projects/[slug]",
+];
 const PUBLIC_API_ROUTES = ["/api/public-data"];
 // Admin routes
 const ADMIN_ROUTES = ["/admin"];
