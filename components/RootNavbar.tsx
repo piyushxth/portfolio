@@ -11,7 +11,6 @@ import { usePathname } from "next/navigation";
 const RootNavbar = () => {
   const pathname = usePathname();
   const isHome = pathname === "/";
-
   return (
     <header
       className={isHome ? "hidden" : "w-full bg-transparent"}
@@ -41,16 +40,23 @@ const RootNavbar = () => {
 
         {/* Desktop Nav */}
         <ul className="hidden md:flex place-items-center space-x-4 rounded-full border border-border-primary px-5 py-2 text-sm text-gray-500">
-          {Navlinks.map((link) => (
-            <li key={link.key}>
-              <Link
-                href={link.href}
-                className="font-medium transition-colors text-primary/90 hover:text-primary"
-              >
-                {link.name}
-              </Link>
-            </li>
-          ))}
+          {Navlinks.map((link) => {
+            const isActive = pathname === link.href;
+            return (
+              <li key={link.key}>
+                <Link
+                  href={link.href}
+                  className={`font-medium transition-colors ${
+                    isActive
+                      ? "text-primary"
+                      : "text-primary/90 hover:text-primary"
+                  }`}
+                >
+                  {link.name}
+                </Link>
+              </li>
+            );
+          })}
         </ul>
 
         {/* Right actions */}

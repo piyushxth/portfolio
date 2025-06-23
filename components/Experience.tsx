@@ -156,7 +156,7 @@ const experiences = [
 
 const Experience = () => {
   return (
-    <section className="mt-32 mb-10 mx-auto max-w-6xl px-4 py-20 relative flex flex-col gap-10">
+    <section className="mx-auto max-w-6xl px-4 relative flex flex-col gap-10">
       <div className=" text-center flex flex-col gap-4">
         <span className=" text-sm font-medium text-indigo-600">
           Work Experience
