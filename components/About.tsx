@@ -8,12 +8,14 @@ const DraggableImage = ({
   src,
   alt,
   className = "",
-  rotation = "",
+  rotate = 0,
+  scale = 1,
 }: {
   src: string;
   alt: string;
   className?: string;
-  rotation?: string;
+  rotate?: number;
+  scale?: number;
 }) => {
   const controls = useAnimation();
   const containerRef = useRef<HTMLDivElement>(null);
@@ -53,11 +55,18 @@ const DraggableImage = ({
         dragElastic={0.25}
         animate={controls}
         onDragEnd={handleDragEnd}
-        whileHover={{ scale: 1.05 }}
-        whileTap={{ scale: 1.12 }}
+        whileHover={{
+          scale: scale + 0.05,
+          rotate: rotate + 2, // rotate more on hover
+        }}
+        whileTap={{
+          scale: scale + 0.12,
+          rotate: rotate + 4, // rotate even more when clicked/held
+        }}
         className="absolute h-[140px] w-[140px] cursor-grab active:cursor-grabbing"
         style={{
-          transform: rotation,
+          rotate,
+          scale,
           userSelect: "none",
           touchAction: "none",
         }}
@@ -98,19 +107,22 @@ const About = () => {
               src="/hero-images/hero1.jpg"
               alt="Piyush 1"
               className="z-20 -translate-y-2"
-              rotation="rotate(-2deg)"
+              rotate={-3.2}
             />
+
             <DraggableImage
               src="/hero-images/hero2.jpg"
               alt="Piyush 2"
               className="z-30"
-              rotation="rotate(3deg)"
+              rotate={3}
             />
+
             <DraggableImage
               src="/hero-images/hero3.jpg"
               alt="Piyush 3"
               className="z-20 translate-y-4"
-              rotation="scale(1.1) rotate(-2deg)"
+              rotate={-2}
+              scale={1.1}
             />
           </div>
         </div>
