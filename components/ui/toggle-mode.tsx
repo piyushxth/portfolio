@@ -24,6 +24,7 @@ export function ModeToggle() {
     <motion.div
       whileHover={{ scale: 1.1, rotate: 90 }}
       transition={{ type: "spring", damping: 20, duration: 0.3 }}
+      className="md:fixed top-[0.96rem] z-50"
     >
       <Button
         variant="outline"

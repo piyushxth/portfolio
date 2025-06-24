@@ -56,11 +56,11 @@ const DraggableImage = ({
         animate={controls}
         onDragEnd={handleDragEnd}
         whileHover={{
-          scale: scale + 0.05,
+          scale: scale + 0.1,
           rotate: rotate + 2, // rotate more on hover
         }}
         whileTap={{
-          scale: scale + 0.12,
+          scale: scale + 0.15,
           rotate: rotate + 4, // rotate even more when clicked/held
         }}
         className="absolute h-[140px] w-[140px] cursor-grab active:cursor-grabbing"
