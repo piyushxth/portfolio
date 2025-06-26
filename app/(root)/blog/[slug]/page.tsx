@@ -27,7 +27,7 @@ const page = async ({ params }: { params: Promise<{ slug: string }> }) => {
           </div>
           <div className="mb-4 space-y-4 text-balance">
             <h1 className="max-w-2xl text-4xl font-medium leading-[45px] tracking-tight text-white md:text-5xl md:leading-[60px]">
-              The Only Next.js Favicon Guide You'll Need (Updated 2025)
+              The Only Next.js Favicon Guide You&apos;ll Need (Updated 2025)
             </h1>
             <p className="hidden max-w-3xl leading-8 text-slate-100 md:block">
               Learn how to properly add a Favicon to your Next.js application.
@@ -134,8 +134,8 @@ const page = async ({ params }: { params: Promise<{ slug: string }> }) => {
       <div className="grid grid-cols-[1fr_min(75ch,100%)_1fr] z-10">
         <div className="col-start-2">
           <p className="mb-6 text-base leading-8 text-secondary">
-            You're probably here because you published your Next.js application
-            and noticed that either:
+            You&apos;re probably here because you published your Next.js
+            application and noticed that either:
           </p>
           <ol className="mb-8 list-decimal pl-8">
             <li className="mb-4 text-base leading-8 text-secondary">
@@ -147,8 +147,9 @@ const page = async ({ params }: { params: Promise<{ slug: string }> }) => {
           </ol>
           <p className="mb-6 text-base leading-8 text-secondary">
             The Next.js documentation is difficult to understand in this area
-            and doesn't clearly call out many of the gotchas and magic behavior
-            that Next.js handles behind the scenes. This article will show you
+            and doesn&apos;t clearly call out many of the gotchas and magic
+            behavior that Next.js handles behind the scenes. This article will
+            show you
           </p>
         </div>
       </div>

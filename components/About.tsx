@@ -23,7 +23,8 @@ const DraggableImage = ({
 
   useEffect(() => {
     controls.start({
-      ...initial,
+      x: 0,
+      y: 0,
       transition: {
         delay: 0.4,
         type: "spring",
@@ -35,7 +36,8 @@ const DraggableImage = ({
 
   const handleDragEnd = () => {
     controls.start({
-      ...initial,
+      x: 0,
+      y: 0,
       transition: {
         type: "spring",
         stiffness: 200,
@@ -96,7 +98,7 @@ const About = () => {
             <span>Good evening!</span>
           </div>
           <h1 className=" max-w-2xl text-balance text-4xl font-medium leading-tight tracking-tight text-primary md:text-5xl lg:text-6xl lg:leading-[64px]">
-            I'm Piyush, a creative frontend developer.
+            I&apos;m Piyush, a creative frontend developer.
           </h1>
         </div>
 

@@ -1,6 +1,7 @@
 import About from "@/components/About";
 import Experience from "@/components/Experience";
 import Subscribe from "@/components/Subscribe";
+import Image from "next/image";
 
 const page = () => {
   return (
@@ -10,7 +11,7 @@ const page = () => {
       <div className="text-center flex flex-col gap-4 mt-10">
         <span className="text-sm font-medium text-indigo-600">About</span>
         <h2 className="mx-auto max-w-lg text-balance text-center text-3xl font-medium leading-10 tracking-tight text-primary md:text-3xl">
-          Here's a quick intro about me and what I love to do
+          Here&apos;s a quick intro about me and what I love to do
         </h2>
       </div>
       <div className="relative">
@@ -25,9 +26,11 @@ const page = () => {
                     <div className="grid h-full place-items-center rounded-xl border-2 border-[#A5AEB81F]/10 bg-[#EDEEF0] shadow-inner" />
                   </div>
                 </div>
-                <img
+                <Image
+                  height={270}
+                  width={180}
                   className="absolute left-0 top-0 h-[270px] w-[180px] -rotate-2 rounded-lg object-cover shadow"
-                  src="/knights_kwest.jpeg"
+                  src="/hero-images/hero1.jpg"
                   alt="A headshot"
                 />
               </div>
@@ -55,9 +58,11 @@ const page = () => {
                   <div className="grid h-full place-items-center rounded-xl border-2 border-[#A5AEB81F]/10 bg-[#EDEEF0] shadow-inner" />
                 </div>
               </div>
-              <img
+              <Image
+                height={270}
+                width={180}
                 className="absolute left-0 top-0 h-[270px] w-[180px] -rotate-2 rounded-lg object-cover shadow"
-                src="/knights_kwest.jpeg"
+                src="/hero-images/hero2.jpg"
                 alt="A headshot"
               />
             </div>
@@ -74,9 +79,11 @@ const page = () => {
                     <div className="grid h-full place-items-center rounded-xl border-2 border-[#A5AEB81F]/10 bg-[#EDEEF0] shadow-inner" />
                   </div>
                 </div>
-                <img
+                <Image
+                  height={270}
+                  width={180}
                   className="absolute left-0 top-0 h-[270px] w-[180px] rotate-2 rounded-lg object-cover shadow"
-                  src="/c3_speaker_head.png"
+                  src="/hero-images/hero3.jpg"
                   alt="Speaking at C3 Conf!"
                 />
               </div>
@@ -103,9 +110,11 @@ const page = () => {
                   <div className="grid h-full place-items-center rounded-xl border-2 border-[#A5AEB81F]/10 bg-[#EDEEF0] shadow-inner" />
                 </div>
               </div>
-              <img
+              <Image
+                height={270}
+                width={180}
                 className="absolute left-0 top-0 h-[270px] w-[180px] rotate-2 rounded-lg object-cover shadow"
-                src="/braydon_headshot_3.jpg"
+                src="/hero-images/hero4.jpg"
                 alt="Speaking at C3 Conf!"
               />
             </div>
@@ -122,9 +131,11 @@ const page = () => {
                     <div className="grid h-full place-items-center rounded-xl border-2 border-[#A5AEB81F]/10 bg-[#EDEEF0] shadow-inner" />
                   </div>
                 </div>
-                <img
+                <Image
+                  height={270}
+                  width={180}
                   className="absolute left-0 top-0 h-[270px] w-[180px] -rotate-2 rounded-lg object-cover shadow"
-                  src="/braydon_and_pj.jpeg"
+                  src="/hero-images/hero4.jpg"
                   alt="A headshot"
                 />
               </div>
@@ -142,7 +153,7 @@ const page = () => {
             </p>
             <p className="mb-6 text-base leading-8 text-secondary">
               Family has always been my center, and seeing ours grow has been
-              life's greatest joy. Our daughter ElizaJane arrived in 2021,
+              life&apos;s greatest joy. Our daughter ElizaJane arrived in 2021,
               bringing endless wonder to our days, and little Renny joined our
               crew in 2023, completing our circle.
             </p>
@@ -156,9 +167,11 @@ const page = () => {
                   <div className="grid h-full place-items-center rounded-xl border-2 border-[#A5AEB81F]/10 bg-[#EDEEF0] shadow-inner" />
                 </div>
               </div>
-              <img
+              <Image
+                height={270}
+                width={180}
                 className="absolute left-0 top-0 h-[270px] w-[180px] -rotate-2 rounded-lg object-cover shadow"
-                src="/braydon_and_pj.jpeg"
+                src="/hero-images/hero4.jpg"
                 alt="A headshot"
               />
             </div>
@@ -175,9 +188,11 @@ const page = () => {
                     <div className="grid h-full place-items-center rounded-xl border-2 border-[#A5AEB81F]/10 bg-[#EDEEF0] shadow-inner" />
                   </div>
                 </div>
-                <img
+                <Image
+                  height={270}
+                  width={180}
                   className="absolute left-0 top-0 h-[270px] w-[180px] rotate-2 rounded-lg object-cover shadow"
-                  src="/braydon_speaking_photo.jpeg"
+                  src="/hero-images/hero1.jpg"
                   alt="A headshot"
                 />
               </div>
@@ -188,15 +203,16 @@ const page = () => {
               These Days
             </h2>
             <p className="mb-6 text-base leading-8 text-secondary">
-              Currently, I'm leading teams at LogicGate as a Senior Frontend
-              Engineer where we're building some pretty awesome stuff. Speaking
-              at tech conferences has become a regular part of my year.
+              Currently, I&apos;m leading teams at LogicGate as a Senior
+              Frontend Engineer where we&apos;re building some pretty awesome
+              stuff. Speaking at tech conferences has become a regular part of
+              my year.
             </p>
             <p className="mb-6 text-base leading-8 text-secondary">
-              When I'm not working, you'll find me on creative coding side
-              projects, writing for my blog, failing spectacularly at games with
-              friends, or—best of all—hanging out with my family, usually with
-              coffee nearby and dad jokes at the ready.
+              When I&apos;m not working, you&apos;ll find me on creative coding
+              side projects, writing for my blog, failing spectacularly at games
+              with friends, or—best of all—hanging out with my family, usually
+              with coffee nearby and dad jokes at the ready.
             </p>
           </div>
 
@@ -208,9 +224,11 @@ const page = () => {
                   <div className="grid h-full place-items-center rounded-xl border-2 border-[#A5AEB81F]/10 bg-[#EDEEF0] shadow-inner" />
                 </div>
               </div>
-              <img
+              <Image
+                height={270}
+                width={180}
                 className="absolute left-0 top-0 h-[270px] w-[180px] rotate-2 rounded-lg object-cover shadow"
-                src="/braydon_speaking_photo.jpeg"
+                src="/hero-images/hero1.jpg"
                 alt="A headshot"
               />
             </div>

@@ -12,7 +12,8 @@ const Draggable = () => {
 
   useEffect(() => {
     controls.start({
-      ...initialPosition,
+      x: 0,
+      y: 0,
       transition: {
         delay: 0.4,
         type: "spring",
@@ -24,7 +25,8 @@ const Draggable = () => {
 
   const handleDragEnd = () => {
     controls.start({
-      ...initialPosition,
+      x: 0,
+      y: 0,
       transition: {
         type: "spring",
         stiffness: 200,
